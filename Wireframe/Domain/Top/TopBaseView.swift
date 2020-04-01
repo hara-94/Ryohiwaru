@@ -9,6 +9,11 @@
 import UIKit
 import Base
 
-open class TopBaseView<Dependency: TopBaseDependency>: AppViewController, TopViewContract {
+open class TopBaseView<Dependency: TopBaseDependency>: AppViewController, TopViewContract, ViewModelRepresentable {
     
+    public typealias ViewModel = Dependency.ViewModel
+    
+    public var presenter: TopPresenterInterface!
+    
+    public func update(viewModel: Dependency.ViewModel?) { }
 }

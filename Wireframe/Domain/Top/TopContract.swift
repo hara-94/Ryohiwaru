@@ -16,7 +16,9 @@ public protocol TopBaseDependency: AnyDependency where View: TopViewContract {
 
 public protocol TopViewInterface: AnyViewInterface { }
 
-public protocol TopViewContract: TopViewInterface { }
+public protocol TopViewContract: TopViewInterface {
+    var presenter: TopPresenterInterface! { get set }
+}
 
 public protocol TopRouterInterface: AnyRouterInterface { }
 
