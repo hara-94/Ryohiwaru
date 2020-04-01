@@ -14,7 +14,9 @@ public protocol TopBaseDependency: AnyDependency where View: TopViewContract {
     associatedtype ViewModel
 }
 
-public protocol TopViewInterface: AnyViewInterface { }
+public protocol TopViewInterface: AnyViewInterface {
+    static func instantiate(presenter: TopPresenterInterface) -> Self
+}
 
 public protocol TopViewContract: TopViewInterface {
     var presenter: TopPresenterInterface! { get set }
@@ -29,4 +31,5 @@ public protocol TopPresenterContract: TopPresenterInterface {
     
     var view: TopViewInterface! { get set }
     var router: TopRouterInterface! { get set }
+    init()
 }

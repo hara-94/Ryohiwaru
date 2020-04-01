@@ -11,9 +11,11 @@ import Base
 
 open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPresenterContract {
     
-    public var view: TopViewInterface!
+    public weak var view: TopViewInterface!
     public var router: TopRouterInterface!
- 
+    
+    public required override init() {} 
+    
     public func update(viewModel: Dependency.ViewModel) {
         if let view = view as? AnyViewRepresentable {
             view.update(anyViewModel: viewModel)
