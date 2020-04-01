@@ -7,3 +7,6 @@
 //
 
 import Foundation
+import Wireframe
+
+final class TopViewController: TopBaseView<TopDependency> { }

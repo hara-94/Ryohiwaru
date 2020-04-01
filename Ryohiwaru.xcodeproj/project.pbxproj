@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
+		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3267A7DF243425E40008B4D9 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9B424340E4B004C2571 /* AppViewController.swift */; };
 		3279F99624340B89004C2571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F99524340B89004C2571 /* AppDelegate.swift */; };
 		3279F99824340B89004C2571 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F99724340B89004C2571 /* SceneDelegate.swift */; };
 		3279F99F24340B92004C2571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3279F99E24340B92004C2571 /* Assets.xcassets */; };
@@ -27,9 +30,17 @@
 		3279F9E1243411CD004C2571 /* TopBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9E0243411CD004C2571 /* TopBaseRouter.swift */; };
 		3279F9E3243411D7004C2571 /* TopBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9E2243411D7004C2571 /* TopBaseView.swift */; };
 		3279F9E5243411F7004C2571 /* TopContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9E4243411F7004C2571 /* TopContract.swift */; };
+		3279F9E9243415B0004C2571 /* AnyContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9E8243415B0004C2571 /* AnyContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3267A7DC2434233F0008B4D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3279F98A24340B89004C2571 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3279F9BA24340F33004C2571;
+			remoteInfo = Base;
+		};
 		3279F9C024340F33004C2571 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3279F98A24340B89004C2571 /* Project object */;
@@ -47,6 +58,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3267A7DE2434233F0008B4D9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3279F9C424340F33004C2571 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,6 +106,7 @@
 		3279F9E0243411CD004C2571 /* TopBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBaseRouter.swift; sourceTree = "<group>"; };
 		3279F9E2243411D7004C2571 /* TopBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBaseView.swift; sourceTree = "<group>"; };
 		3279F9E4243411F7004C2571 /* TopContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContract.swift; sourceTree = "<group>"; };
+		3279F9E8243415B0004C2571 /* AnyContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +130,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3267A7D4243423390008B4D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3279F98924340B89004C2571 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +151,7 @@
 				3279F9BC24340F33004C2571 /* Base */,
 				3279F9D124341171004C2571 /* Wireframe */,
 				3279F99324340B89004C2571 /* Products */,
+				3267A7D4243423390008B4D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +202,7 @@
 			children = (
 				3279F9B424340E4B004C2571 /* AppViewController.swift */,
 				3279F9C924341013004C2571 /* BasePresenter.swift */,
+				3279F9E8243415B0004C2571 /* AnyContract.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -281,10 +314,12 @@
 				3279F9CC24341171004C2571 /* Sources */,
 				3279F9CD24341171004C2571 /* Frameworks */,
 				3279F9CE24341171004C2571 /* Resources */,
+				3267A7DE2434233F0008B4D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3267A7DD2434233F0008B4D9 /* PBXTargetDependency */,
 			);
 			name = Wireframe;
 			productName = Wireframe;
@@ -379,6 +414,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3267A7DF243425E40008B4D9 /* AppViewController.swift in Sources */,
+				3279F9E9243415B0004C2571 /* AnyContract.swift in Sources */,
 				3279F9CA24341013004C2571 /* BasePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +434,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3267A7DD2434233F0008B4D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3279F9BA24340F33004C2571 /* Base */;
+			targetProxy = 3267A7DC2434233F0008B4D9 /* PBXContainerItemProxy */;
+		};
 		3279F9C124340F33004C2571 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3279F9BA24340F33004C2571 /* Base */;

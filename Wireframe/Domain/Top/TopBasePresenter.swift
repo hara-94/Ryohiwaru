@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Base
+
+open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPresenterContract {
+    
+    public var view: TopViewInterface!
+    public var router: TopRouterInterface!
+    
+}

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+import Base
+import Wireframe
+
+final class TopPresenter: TopBasePresenter<TopDependency> { }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BasePresenter {
+open class BasePresenter {
     
     open func viewDidLoad() { }
     open func viewWillAppear(_ animated: Bool) { }

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Base
+import Wireframe
+
+struct TopDependency: TopBaseDependency {
+
+    typealias View = TopViewController
+    typealias Presenter = TopPresenter
+    typealias ViewModel = TopViewModel
+}
+
+struct TopViewModel { }

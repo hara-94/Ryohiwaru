@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppViewController: UIViewController {
+open class AppViewController: UIViewController {
 
     public class func instantiate() -> Self {
         return self.init()
@@ -21,5 +21,4 @@ class AppViewController: UIViewController {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
 }

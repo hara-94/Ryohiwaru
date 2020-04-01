@@ -6,4 +6,9 @@
 //  Copyright © 2020 原ひかる. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Base
+
+open class TopBaseView<Dependency: TopBaseDependency>: AppViewController, TopViewContract {
+    
+}
