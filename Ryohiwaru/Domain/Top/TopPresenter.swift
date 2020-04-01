@@ -10,4 +10,10 @@ import Foundation
 import Base
 import Wireframe
 
-final class TopPresenter: TopBasePresenter<TopDependency> { }
+final class TopPresenter: TopBasePresenter<TopDependency> {
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
