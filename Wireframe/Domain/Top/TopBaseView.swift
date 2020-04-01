@@ -14,6 +14,9 @@ open class TopBaseView<Dependency: TopBaseDependency>: AppViewController, TopVie
     public typealias ViewModel = Dependency.ViewModel
     
     public var presenter: TopPresenterInterface!
+    public var viewModel: ViewModel?
     
-    public func update(viewModel: Dependency.ViewModel?) { }
+    public func update(viewModel: Dependency.ViewModel?) {
+        self.viewModel = viewModel
+    }
 }

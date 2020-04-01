@@ -13,5 +13,10 @@ open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPr
     
     public var view: TopViewInterface!
     public var router: TopRouterInterface!
-    
+ 
+    public func update(viewModel: Dependency.ViewModel) {
+        if let view = view as? AnyViewRepresentable {
+            view.update(anyViewModel: viewModel)
+        }
+    }
 }
