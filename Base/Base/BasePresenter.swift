@@ -10,6 +10,8 @@ import Foundation
 
 open class BasePresenter {
     
+    public init() { }
+    
     open func viewDidLoad() { }
     open func viewWillAppear(_ animated: Bool) { }
     open func viewDidAppear(_ animated: Bool) { }

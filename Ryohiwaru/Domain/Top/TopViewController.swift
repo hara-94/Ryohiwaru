@@ -11,4 +11,7 @@ import Wireframe
 
 final class TopViewController: TopBaseView<TopDependency> {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
