@@ -12,7 +12,6 @@ import Wireframe
 
 final class TopPresenter: TopBasePresenter<TopDependency> {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
