@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import Base
+
+public protocol StartBaseDependency: AnyDependency where View: StartViewContract {
+    associatedtype Presenter: StartPresenterContract
+    associatedtype ViewModel
+}
+
+public protocol StartViewInterface: AnyViewInterface { }
+
+public protocol StartViewContract: StartViewInterface {
+    var presenter: StartPresenterInterface! { get set }
+}
+
+public protocol StartRouterInterface: AnyRouterInterface { }
+
+public protocol StartPresenterInterface: AnyPresenterInterface { }
+
+public protocol StartPresenterContract: StartPresenterInterface {
+    associatedtype Dependency: StartBaseDependency
+    
+    var view: StartViewInterface! { get set }
+    var router: StartRouterInterface! { get set }
+}
