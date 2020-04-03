@@ -16,12 +16,12 @@ public class GradientButton: UIButton {
         }
     }
 
-    public func setGradient(top: UIColor, bottom: UIColor) {
+    public func setGradient(startColor: UIColor, endColor: UIColor, start: CGPoint, end: CGPoint) {
         (layer as! CAGradientLayer).colors = [
-            top.cgColor,
-            bottom.cgColor
+            startColor.cgColor,
+            endColor.cgColor
         ]
-        (layer as! CAGradientLayer).startPoint = CGPoint(x: 0, y: 0.5)
-        (layer as! CAGradientLayer).endPoint = CGPoint(x: 1, y: 1)
+        (layer as! CAGradientLayer).startPoint = start
+        (layer as! CAGradientLayer).endPoint = end
     }
 }
