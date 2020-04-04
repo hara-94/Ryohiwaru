@@ -15,4 +15,15 @@ final class TopPresenter: TopBasePresenter<TopDependency> {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func on(event: TopPresenterOperation) {
+        switch event {
+        case .onTapManageButton:
+            print("onTapManageButton")
+        case .onTapJoinButton:
+            print("onTapJoinButton")
+        case .onTapStartButton:
+            print("onTapStartButton")
+        }
+    }
 }

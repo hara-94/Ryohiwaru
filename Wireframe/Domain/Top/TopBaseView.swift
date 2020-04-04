@@ -36,4 +36,28 @@ open class TopBaseView<Dependency: TopBaseDependency>: AppViewController, TopVie
     public required init() {
         super.init()
     }
+    
+    public func kick(event: Dependency.PresenterOperation) {
+        if let presenter = presenter as? AnyPresenterEventReactable {
+            presenter.on(anyEvent: event)
+        }
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter.viewDidLoad()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.viewWillAppear(animated)
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter.viewDidAppear(animated)
+    }
 }

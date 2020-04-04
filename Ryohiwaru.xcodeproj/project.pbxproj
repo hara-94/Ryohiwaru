@@ -15,6 +15,7 @@
 		3224855E24377CC000900746 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855D24377CC000900746 /* StartPresenter.swift */; };
 		3224856024377CC900900746 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855F24377CC900900746 /* StartRouter.swift */; };
 		3224856224377CDA00900746 /* StartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224856124377CDA00900746 /* StartContract.swift */; };
+		32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32414A32243819AC00C74F66 /* PresenterEventReactable.swift */; };
 		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
 		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3267A7DF243425E40008B4D9 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9B424340E4B004C2571 /* AppViewController.swift */; };
@@ -137,6 +138,7 @@
 		3224855D24377CC000900746 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		3224855F24377CC900900746 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
 		3224856124377CDA00900746 /* StartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartContract.swift; sourceTree = "<group>"; };
+		32414A32243819AC00C74F66 /* PresenterEventReactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEventReactable.swift; sourceTree = "<group>"; };
 		3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRepresentable.swift; sourceTree = "<group>"; };
 		3279F99224340B89004C2571 /* Ryohiwaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryohiwaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3279F99524340B89004C2571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */,
+				32414A32243819AC00C74F66 /* PresenterEventReactable.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3224855324377C7400900746 /* StartBasePresenter.swift in Sources */,
+				32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */,
 				3267A7E324342CA20008B4D9 /* ViewModelRepresentable.swift in Sources */,
 				3224855724377C8800900746 /* StartBaseView.swift in Sources */,
 				3279F9DF243411C1004C2571 /* TopBasePresenter.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import Base
 
-open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPresenterContract {
+open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPresenterContract, PresenterEventReactable {
     
     public weak var view: TopViewInterface!
     public var router: TopRouterInterface!
@@ -23,4 +23,6 @@ open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPr
             view.update(anyViewModel: viewModel)
         }
     }
+    
+    open func on(event: Dependency.PresenterOperation) {}
 }
