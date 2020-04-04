@@ -14,7 +14,6 @@ open class TopBasePresenter<Dependency: TopBaseDependency>: BasePresenter, TopPr
         super.init()  
     }
     
-    
     public weak var view: TopViewInterface!
     public var router: TopRouterInterface!
     

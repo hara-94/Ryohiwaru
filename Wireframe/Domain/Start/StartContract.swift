@@ -14,7 +14,9 @@ public protocol StartBaseDependency: AnyDependency where View: StartViewContract
     associatedtype ViewModel
 }
 
-public protocol StartViewInterface: AnyViewInterface { }
+public protocol StartViewInterface: AnyViewInterface {
+    static func instantiate(presenter: StartPresenterInterface) -> Self
+}
 
 public protocol StartViewContract: StartViewInterface {
     var presenter: StartPresenterInterface! { get set }
@@ -29,4 +31,5 @@ public protocol StartPresenterContract: StartPresenterInterface {
     
     var view: StartViewInterface! { get set }
     var router: StartRouterInterface! { get set }
+    init()
 }
