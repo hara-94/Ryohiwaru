@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import Base
+import Wireframe
+
+final class StartPresenter: StartBasePresenter<StartDepedency> {
+    
+}
