@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Wireframe
+
+final class StartRouter: StartBaseRouter<StartDepedency> {
+    override class func resolvePresenter() -> StartPresenter {
+        return Presenter()
+    }
+}

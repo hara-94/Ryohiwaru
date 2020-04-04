@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Wireframe
+import Resource
+
+final class StartViewController: StartBaseView<StartDepedency> {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = Color.Background.main
+    }
+}

@@ -15,4 +15,19 @@ final class TopPresenter: TopBasePresenter<TopDependency> {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func on(event: TopPresenterOperation) {
+        switch event {
+        case .onTapManageButton:
+            print("onTapManageButton")
+        case .onTapJoinButton:
+            print("onTapJoinButton")
+        case .onTapStartButton:
+            let viewController = StartRouter.assemble()
+            if let view = self.view as? TopViewController {
+                viewController.modalPresentationStyle = .pageSheet
+                view.present(viewController, animated: true, completion: nil)
+            }
+        }
+    }
 }

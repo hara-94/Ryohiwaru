@@ -15,6 +15,13 @@ struct TopDependency: TopBaseDependency {
     typealias View = TopViewController
     typealias Presenter = TopPresenter
     typealias ViewModel = TopViewModel
+    typealias PresenterOperation = TopPresenterOperation
 }
 
 struct TopViewModel { }
+
+enum TopPresenterOperation {
+    case onTapManageButton
+    case onTapJoinButton
+    case onTapStartButton
+}

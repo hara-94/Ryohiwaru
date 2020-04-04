@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import Base
+import Wireframe
+
+struct StartDepedency: StartBaseDependency {
+  
+    typealias View = StartViewController
+    typealias Presenter = StartPresenter
+    typealias ViewModel = StartViewModel
+}
+
+struct StartViewModel {
+    
+}

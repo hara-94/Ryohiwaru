@@ -90,14 +90,14 @@ private extension TopViewController {
     }
     
     @objc func manageButtonOnPressed(_ sender: Any?) {
-        print("manageButtonOnPressed")
+        kick(event: .onTapManageButton)
     }
     
     @objc func joinButtonOnPressed(_ sender: Any?) {
-        print("joinButtonOnPressed")
+        kick(event: .onTapJoinButton)
     }
     
     @objc func startButtonOnPressed(_ sender: Any?) {
-        print("startButtonOnPressed")
+        kick(event: .onTapStartButton)
     }
 }
