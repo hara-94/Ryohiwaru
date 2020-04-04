@@ -23,7 +23,10 @@ final class TopPresenter: TopBasePresenter<TopDependency> {
         case .onTapJoinButton:
             print("onTapJoinButton")
         case .onTapStartButton:
-            print("onTapStartButton")
+            let viewController = StartRouter.assemble()
+            if self.view is TopViewController {
+                
+            }
         }
     }
 }
