@@ -14,6 +14,7 @@ public struct Color {
         public static let main = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1/1)
         public static let buttonStart = UIColor(red: 158/255, green: 158/255, blue: 255/255, alpha: 1/1)
         public static let buttonEnd = UIColor(red: 215/255, green: 215/255, blue: 255/255, alpha: 1/1)
+        public static let cellTitle = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1/1)
     }
     
     public struct Selected {
