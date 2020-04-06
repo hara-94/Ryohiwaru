@@ -13,6 +13,7 @@ import Resource
 final class StartViewController: StartBaseView<StartDepedency> {
     
     private let tableView: UITableView = .init()
+    private let registerButton: UIButton = .init()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ final class StartViewController: StartBaseView<StartDepedency> {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StartInputCell.self, forCellReuseIdentifier: "StartInputCell")
+        tableView.register(StartDateCell.self, forCellReuseIdentifier: "StartDateCell")
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -29,6 +31,18 @@ final class StartViewController: StartBaseView<StartDepedency> {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+        ])
+        
+        view.addSubview(registerButton)
+        registerButton.makeEdgeCircle(radius: 18)
+        registerButton.backgroundColor = Color.Background.buttonStart
+        registerButton.setTitle("登録する", for: .normal)
+        registerButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            registerButton.heightAnchor.constraint(equalToConstant: 36),
+            registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
         ])
     }
     
@@ -44,14 +58,25 @@ extension StartViewController: UITableViewDelegate {
             fatalError("viewModel is not defined successfully")
         }
         if viewModel.sections[indexPath.section].expanded {
-            return 60
+            switch viewModel.sections[indexPath.section].cellType {
+            case .defaultCell:
+                return 60
+            case .date:
+                return 100
+            }
         } else {
-            return 8
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 15))
+        view.backgroundColor = .clear
+        return view
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -91,7 +116,22 @@ extension StartViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StartInputCell", for: indexPath) as! StartInputCell
-        return cell
+        guard let viewModel = self.viewModel else {
+            fatalError("viewModel is not defined successfully")
+        }
+        switch viewModel.sections[indexPath.section].cellType {
+        case .defaultCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StartInputCell", for: indexPath) as! StartInputCell
+            cell.showTextField(expanded: viewModel.sections[indexPath.section].expanded)
+            return cell
+        case .date:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StartDateCell", for: indexPath) as! StartDateCell
+            cell.showTextField(expanded: viewModel.sections[indexPath.section].expanded)
+            return cell
+        }
     }
+}
+
+private extension StartViewController {
+    
 }

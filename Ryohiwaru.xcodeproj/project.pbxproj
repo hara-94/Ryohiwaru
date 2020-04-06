@@ -55,6 +55,8 @@
 		32F1B096243567AD00441D85 /* UIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F1B094243567AD00441D85 /* UIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32F1B099243567AD00441D85 /* UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F1B092243567AD00441D85 /* UIComponent.framework */; };
 		32F1B09A243567AD00441D85 /* UIComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32F1B092243567AD00441D85 /* UIComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32FC9F24243AA4AC0046EC54 /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC9F23243AA4AC0046EC54 /* StartDateCell.swift */; };
+		32FC9F27243AA6410046EC54 /* BorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC9F26243AA6410046EC54 /* BorderTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,8 @@
 		32F1B092243567AD00441D85 /* UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F1B094243567AD00441D85 /* UIComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
 		32F1B095243567AD00441D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32FC9F23243AA4AC0046EC54 /* StartDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDateCell.swift; sourceTree = "<group>"; };
+		32FC9F26243AA6410046EC54 /* BorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				3295FE0B24394037002FC5F6 /* StartInputCell.swift */,
+				32FC9F23243AA4AC0046EC54 /* StartDateCell.swift */,
 				3295FE1124398D30002FC5F6 /* StartHeaderView.swift */,
 			);
 			path = Component;
@@ -423,6 +428,7 @@
 		32F1B093243567AD00441D85 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				32FC9F25243AA6200046EC54 /* TextField */,
 				32F1B09E243567BA00441D85 /* Button */,
 				32F1B094243567AD00441D85 /* UIComponent.h */,
 				32F1B095243567AD00441D85 /* Info.plist */,
@@ -436,6 +442,14 @@
 				32EC442B24370AE800EA0299 /* GradientButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		32FC9F25243AA6200046EC54 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				32FC9F26243AA6410046EC54 /* BorderTextField.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,6 +733,7 @@
 				3279F9B524340E4B004C2571 /* AppViewController.swift in Sources */,
 				3279F99824340B89004C2571 /* SceneDelegate.swift in Sources */,
 				3295FE1224398D30002FC5F6 /* StartHeaderView.swift in Sources */,
+				32FC9F24243AA4AC0046EC54 /* StartDateCell.swift in Sources */,
 				3279F9B224340D2E004C2571 /* TopContract.swift in Sources */,
 				3295FE0C24394037002FC5F6 /* StartInputCell.swift in Sources */,
 				3224855E24377CC000900746 /* StartPresenter.swift in Sources */,
@@ -773,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32EC442C24370AE800EA0299 /* GradientButton.swift in Sources */,
+				32FC9F27243AA6410046EC54 /* BorderTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

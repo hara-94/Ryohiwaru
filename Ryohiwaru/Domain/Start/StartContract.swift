@@ -26,9 +26,16 @@ struct StartViewModel {
         var title: String
         var values: [String]
         var expanded: Bool
+        var cellType: CellType
+        
+        enum CellType {
+            case defaultCell
+            case date
+        }
     }
 }
 
 enum StartPresenterOperation {
     case onTapHeader
+    case onTapRegisterButton
 }

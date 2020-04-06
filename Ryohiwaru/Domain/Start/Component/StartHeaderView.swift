@@ -14,17 +14,20 @@ final class StartHeaderView: UITableViewHeaderFooterView {
     var section: Int?
     var action: ((Int) -> ())?
     var gestureRecognizer: UITapGestureRecognizer?
+    private let imageView: UIImageView = .init()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setRecognizer()
         setLooks()
+        setLayout()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setRecognizer()
         setLooks()
+        setLayout()
     }
     
     private func setRecognizer() {
@@ -36,6 +39,19 @@ final class StartHeaderView: UITableViewHeaderFooterView {
     private func setLooks() {
         makeEdgeCircle(radius: 15)
         self.contentView.backgroundColor = Color.Background.cellTitle
+    }
+    
+    private func setLayout() {
+        contentView.addSubview(imageView)
+        
+        imageView.image = UIImage(systemName: "arrowtriangle.down.fill")
+        imageView.tintColor = .black
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: 12),
+            imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+        ])
     }
     
     func config(title: String ,section: Int, action: ((Int) -> ())?) {
