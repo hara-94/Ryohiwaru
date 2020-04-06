@@ -12,6 +12,7 @@ import Base
 public protocol StartBaseDependency: AnyDependency where View: StartViewContract {
     associatedtype Presenter: StartPresenterContract
     associatedtype ViewModel
+    associatedtype PresenterOperation
 }
 
 public protocol StartViewInterface: AnyViewInterface {
