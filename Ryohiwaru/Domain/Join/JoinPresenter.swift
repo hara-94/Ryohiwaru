@@ -16,6 +16,9 @@ final class JoinPresenter: JoinBasePresenter<JoinDependency> {
     }
     
     override func on(event: JoinPresenterOperation) {
-        
+        switch event {
+        case .onTapSubmit:
+            print("onTapSubmit")
+        }
     }
 }

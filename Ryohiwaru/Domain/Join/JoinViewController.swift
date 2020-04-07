@@ -75,6 +75,7 @@ private extension JoinViewController {
         joinButton.setTitle("Join", for: .normal)
         joinButton.makeEdgeCircle(radius: 18)
         joinButton.backgroundColor = Color.Background.buttonStart
+        joinButton.addTarget(self, action: #selector(onTapSubmit), for: .touchUpInside)
         joinButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             joinButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
@@ -82,5 +83,9 @@ private extension JoinViewController {
             joinButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             joinButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 40),
         ])
+    }
+    
+    @objc func onTapSubmit() {
+        kick(event: .onTapSubmit)
     }
 }
