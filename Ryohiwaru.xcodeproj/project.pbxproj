@@ -61,6 +61,10 @@
 		32977DB7243C36160082C91B /* JoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DB6243C36160082C91B /* JoinPresenter.swift */; };
 		32977DB9243C361F0082C91B /* JoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DB8243C361F0082C91B /* JoinRouter.swift */; };
 		32977DBB243C36280082C91B /* JoinContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DBA243C36280082C91B /* JoinContract.swift */; };
+		32977DBE243C60D30082C91B /* DetailBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DBD243C60D30082C91B /* DetailBasePresenter.swift */; };
+		32977DC0243C60E00082C91B /* DetailBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DBF243C60E00082C91B /* DetailBaseRouter.swift */; };
+		32977DC2243C60E90082C91B /* DetailBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DC1243C60E90082C91B /* DetailBaseView.swift */; };
+		32977DC4243C60F40082C91B /* DetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32977DC3243C60F40082C91B /* DetailContract.swift */; };
 		32EC442C24370AE800EA0299 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EC442B24370AE800EA0299 /* GradientButton.swift */; };
 		32EC443624370D0300EA0299 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 32EC443424370D0300EA0299 /* Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32EC443924370D0300EA0299 /* Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EC443224370D0300EA0299 /* Util.framework */; };
@@ -204,6 +208,10 @@
 		32977DB6243C36160082C91B /* JoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPresenter.swift; sourceTree = "<group>"; };
 		32977DB8243C361F0082C91B /* JoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRouter.swift; sourceTree = "<group>"; };
 		32977DBA243C36280082C91B /* JoinContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinContract.swift; sourceTree = "<group>"; };
+		32977DBD243C60D30082C91B /* DetailBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBasePresenter.swift; sourceTree = "<group>"; };
+		32977DBF243C60E00082C91B /* DetailBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBaseRouter.swift; sourceTree = "<group>"; };
+		32977DC1243C60E90082C91B /* DetailBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBaseView.swift; sourceTree = "<group>"; };
+		32977DC3243C60F40082C91B /* DetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContract.swift; sourceTree = "<group>"; };
 		32EC442B24370AE800EA0299 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		32EC443224370D0300EA0299 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32EC443424370D0300EA0299 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -406,6 +414,7 @@
 		3279F9DC24341179004C2571 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				32977DBC243C60230082C91B /* Detail */,
 				32977DAA243C2B540082C91B /* Join */,
 				32977D96243BF9550082C91B /* Manage */,
 				3224855124377C4100900746 /* Start */,
@@ -486,6 +495,17 @@
 				32977DBA243C36280082C91B /* JoinContract.swift */,
 			);
 			path = Join;
+			sourceTree = "<group>";
+		};
+		32977DBC243C60230082C91B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				32977DBD243C60D30082C91B /* DetailBasePresenter.swift */,
+				32977DBF243C60E00082C91B /* DetailBaseRouter.swift */,
+				32977DC1243C60E90082C91B /* DetailBaseView.swift */,
+				32977DC3243C60F40082C91B /* DetailContract.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		32EC443324370D0300EA0299 /* Util */ = {
@@ -856,12 +876,15 @@
 			files = (
 				3224855324377C7400900746 /* StartBasePresenter.swift in Sources */,
 				32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */,
+				32977DC4243C60F40082C91B /* DetailContract.swift in Sources */,
 				3267A7E324342CA20008B4D9 /* ViewModelRepresentable.swift in Sources */,
 				32977DAC243C2B670082C91B /* JoinBasePreesnter.swift in Sources */,
 				32977D98243BF9640082C91B /* ManageBasePresenter.swift in Sources */,
 				3224855724377C8800900746 /* StartBaseView.swift in Sources */,
 				3279F9DF243411C1004C2571 /* TopBasePresenter.swift in Sources */,
 				32977DB2243C2B8C0082C91B /* JoinContract.swift in Sources */,
+				32977DC2243C60E90082C91B /* DetailBaseView.swift in Sources */,
+				32977DC0243C60E00082C91B /* DetailBaseRouter.swift in Sources */,
 				3279F9E5243411F7004C2571 /* TopContract.swift in Sources */,
 				3279F9E1243411CD004C2571 /* TopBaseRouter.swift in Sources */,
 				32977D9E243BF9840082C91B /* ManageContract.swift in Sources */,
@@ -869,6 +892,7 @@
 				32977D9C243BF9790082C91B /* ManageBaseView.swift in Sources */,
 				32977DAE243C2B730082C91B /* JoinBaseRouter.swift in Sources */,
 				3279F9E3243411D7004C2571 /* TopBaseView.swift in Sources */,
+				32977DBE243C60D30082C91B /* DetailBasePresenter.swift in Sources */,
 				3224855524377C7E00900746 /* StartBaseRouter.swift in Sources */,
 				32977D9A243BF9700082C91B /* ManageBaseRouter.swift in Sources */,
 				3224855924377C9600900746 /* StartContract.swift in Sources */,
