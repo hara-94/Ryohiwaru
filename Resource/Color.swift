@@ -21,4 +21,8 @@ public struct Color {
         public static let selected = UIColor.black
         public static let unselected = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1/1)
     }
+    
+    public struct Text {
+        public static let explain = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1/1)
+    }
 }
