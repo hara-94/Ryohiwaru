@@ -20,10 +20,8 @@ final class TopPresenter: TopBasePresenter<TopDependency> {
         switch event {
         case .onTapManageButton:
             let viewController = ManageRouter.assemble()
-            let navigationController = UINavigationController(rootViewController: viewController)
             if let view = self.view as? TopViewController {
-                navigationController.modalPresentationStyle = .fullScreen
-                view.present(navigationController, animated: true, completion: nil)
+                view.navigationController?.pushViewController(viewController, animated: true)
             }
         case .onTapJoinButton:
             print("onTapJoinButton")
