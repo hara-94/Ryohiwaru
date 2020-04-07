@@ -23,6 +23,7 @@ final class ManageViewController: ManageBaseView<ManageDepedency> {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ManageTravelItemCell.self, forCellReuseIdentifier: "ManageTravelItemCell")
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -40,6 +41,10 @@ final class ManageViewController: ManageBaseView<ManageDepedency> {
 extension ManageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
