@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             window = UIWindow(frame: UIScreen.main.bounds)
             let viewController = TopRouter.assemble()
-            window?.rootViewController = viewController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }
         return true
