@@ -6,7 +6,7 @@
 //  Copyright © 2020 原ひかる. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Base
 import Wireframe
 
@@ -19,7 +19,10 @@ final class TopPresenter: TopBasePresenter<TopDependency> {
     override func on(event: TopPresenterOperation) {
         switch event {
         case .onTapManageButton:
-            print("onTapManageButton")
+            let viewController = ManageRouter.assemble()
+            if let view = self.view as? TopViewController {
+                view.navigationController?.pushViewController(viewController, animated: true)
+            }
         case .onTapJoinButton:
             print("onTapJoinButton")
         case .onTapStartButton:
