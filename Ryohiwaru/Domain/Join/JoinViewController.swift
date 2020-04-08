@@ -86,6 +86,11 @@ private extension JoinViewController {
     }
     
     @objc func onTapSubmit() {
-        kick(event: .onTapSubmit)
+        guard let id = textField.text else {
+            return
+        }
+        if id != "" {
+            kick(event: .onTapSubmit(id: id))
+        }
     }
 }

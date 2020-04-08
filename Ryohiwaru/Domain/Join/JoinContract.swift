@@ -22,5 +22,5 @@ struct JoinViewModel {
 }
 
 enum JoinPresenterOperation {
-    case onTapSubmit
+    case onTapSubmit(id: String)
 }

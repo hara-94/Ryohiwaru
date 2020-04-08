@@ -26,8 +26,7 @@ final class TopPresenter: TopBasePresenter<TopDependency> {
         case .onTapJoinButton:
             let viewController = JoinRouter.assemble()
             if let view = self.view as? TopViewController {
-                viewController.modalPresentationStyle = .pageSheet
-                view.present(viewController, animated: true, completion: nil)
+                view.navigationController?.pushViewController(viewController, animated: true)
             }
         case .onTapStartButton:
             let viewController = StartRouter.assemble()

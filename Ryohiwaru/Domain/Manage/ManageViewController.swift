@@ -45,6 +45,7 @@ extension ManageViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        kick(event: .onTapCell(index: indexPath.row))
     }
 }
 
