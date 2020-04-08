@@ -20,6 +20,7 @@ final class JoinPresenter: JoinBasePresenter<JoinDependency> {
         case let .onTapSubmit(id):
             print("\(id) is passed")
             let viewController = DetailRouter.assemble()
+            viewController.setViewControllers([], animated: true)
             if let view = view as? JoinViewController {
                 view.navigationController?.pushViewController(viewController, animated: true)
             }

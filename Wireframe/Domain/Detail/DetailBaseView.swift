@@ -9,7 +9,7 @@
 import Foundation
 import Base
 
-open class DetailBaseView<Depedency: DetailBaseDependency>: AppViewController, DetailViewContract, ViewModelRepresentable {
+open class DetailBaseView<Depedency: DetailBaseDependency>: TabAppViewController, DetailViewContract, ViewModelRepresentable {
     public typealias ViewModel = Depedency.ViewModel
     
     public var presenter: DetailPresenterInterface!

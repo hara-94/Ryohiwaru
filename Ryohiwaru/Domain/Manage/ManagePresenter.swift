@@ -6,7 +6,7 @@
 //  Copyright © 2020 原ひかる. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Wireframe
 
 final class ManagePresenter: ManageBasePresenter<ManageDepedency> {
@@ -20,6 +20,7 @@ final class ManagePresenter: ManageBasePresenter<ManageDepedency> {
         case let .onTapCell(index):
             print("\(index) is passed")
             let viewController = DetailRouter.assemble()
+            viewController.setViewControllers([], animated: true)
             if let view = view as? ManageViewController {
                 view.navigationController?.pushViewController(viewController, animated: true)
             }

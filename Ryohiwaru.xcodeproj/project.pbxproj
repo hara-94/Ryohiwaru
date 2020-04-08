@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32157996243D5B9200683786 /* TabAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32157995243D5B9200683786 /* TabAppViewController.swift */; };
+		32157999243D71CB00683786 /* InputBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32157998243D71CB00683786 /* InputBasePresenter.swift */; };
+		3215799B243D71D600683786 /* InputBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215799A243D71D600683786 /* InputBaseRouter.swift */; };
+		3215799D243D71DF00683786 /* InputBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215799C243D71DF00683786 /* InputBaseView.swift */; };
+		3215799F243D71EA00683786 /* InputContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215799E243D71EA00683786 /* InputContract.swift */; };
 		3224855324377C7400900746 /* StartBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855224377C7400900746 /* StartBasePresenter.swift */; };
 		3224855524377C7E00900746 /* StartBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855424377C7E00900746 /* StartBaseRouter.swift */; };
 		3224855724377C8800900746 /* StartBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855624377C8800900746 /* StartBaseView.swift */; };
@@ -159,6 +164,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		32157995243D5B9200683786 /* TabAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAppViewController.swift; sourceTree = "<group>"; };
+		32157998243D71CB00683786 /* InputBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBasePresenter.swift; sourceTree = "<group>"; };
+		3215799A243D71D600683786 /* InputBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBaseRouter.swift; sourceTree = "<group>"; };
+		3215799C243D71DF00683786 /* InputBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBaseView.swift; sourceTree = "<group>"; };
+		3215799E243D71EA00683786 /* InputContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContract.swift; sourceTree = "<group>"; };
 		3224855224377C7400900746 /* StartBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBasePresenter.swift; sourceTree = "<group>"; };
 		3224855424377C7E00900746 /* StartBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBaseRouter.swift; sourceTree = "<group>"; };
 		3224855624377C8800900746 /* StartBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBaseView.swift; sourceTree = "<group>"; };
@@ -287,6 +297,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32157997243D71B100683786 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				32157998243D71CB00683786 /* InputBasePresenter.swift */,
+				3215799A243D71D600683786 /* InputBaseRouter.swift */,
+				3215799C243D71DF00683786 /* InputBaseView.swift */,
+				3215799E243D71EA00683786 /* InputContract.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 		3224855124377C4100900746 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +416,7 @@
 				3279F9B424340E4B004C2571 /* AppViewController.swift */,
 				3279F9C924341013004C2571 /* BasePresenter.swift */,
 				3279F9E8243415B0004C2571 /* AnyContract.swift */,
+				32157995243D5B9200683786 /* TabAppViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -423,6 +445,7 @@
 		3279F9DC24341179004C2571 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				32157997243D71B100683786 /* Input */,
 				32977DBC243C60230082C91B /* Detail */,
 				32977DAA243C2B540082C91B /* Join */,
 				32977D96243BF9550082C91B /* Manage */,
@@ -888,6 +911,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32157996243D5B9200683786 /* TabAppViewController.swift in Sources */,
 				3267A7DF243425E40008B4D9 /* AppViewController.swift in Sources */,
 				3279F9E9243415B0004C2571 /* AnyContract.swift in Sources */,
 				3279F9CA24341013004C2571 /* BasePresenter.swift in Sources */,
@@ -901,12 +925,14 @@
 				3224855324377C7400900746 /* StartBasePresenter.swift in Sources */,
 				32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */,
 				32977DC4243C60F40082C91B /* DetailContract.swift in Sources */,
+				32157999243D71CB00683786 /* InputBasePresenter.swift in Sources */,
 				3267A7E324342CA20008B4D9 /* ViewModelRepresentable.swift in Sources */,
 				32977DAC243C2B670082C91B /* JoinBasePreesnter.swift in Sources */,
 				32977D98243BF9640082C91B /* ManageBasePresenter.swift in Sources */,
 				3224855724377C8800900746 /* StartBaseView.swift in Sources */,
 				3279F9DF243411C1004C2571 /* TopBasePresenter.swift in Sources */,
 				32977DB2243C2B8C0082C91B /* JoinContract.swift in Sources */,
+				3215799F243D71EA00683786 /* InputContract.swift in Sources */,
 				32977DC2243C60E90082C91B /* DetailBaseView.swift in Sources */,
 				32977DC0243C60E00082C91B /* DetailBaseRouter.swift in Sources */,
 				3279F9E5243411F7004C2571 /* TopContract.swift in Sources */,
@@ -917,6 +943,8 @@
 				32977DAE243C2B730082C91B /* JoinBaseRouter.swift in Sources */,
 				3279F9E3243411D7004C2571 /* TopBaseView.swift in Sources */,
 				32977DBE243C60D30082C91B /* DetailBasePresenter.swift in Sources */,
+				3215799D243D71DF00683786 /* InputBaseView.swift in Sources */,
+				3215799B243D71D600683786 /* InputBaseRouter.swift in Sources */,
 				3224855524377C7E00900746 /* StartBaseRouter.swift in Sources */,
 				32977D9A243BF9700082C91B /* ManageBaseRouter.swift in Sources */,
 				3224855924377C9600900746 /* StartContract.swift in Sources */,
