@@ -8,7 +8,17 @@
 
 import Foundation
 import Wireframe
+import Resource
 
 final class DetailViewController: DetailBaseView<DetailDepedency> {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = Color.Background.main
+    }
+    
+    override func update(viewModel: DetailViewModel?) {
+        super.update(viewModel: viewModel)
+    }
 }

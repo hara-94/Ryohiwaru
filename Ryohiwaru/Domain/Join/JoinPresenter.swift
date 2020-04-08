@@ -6,7 +6,7 @@
 //  Copyright © 2020 原ひかる. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Wireframe
 
 final class JoinPresenter: JoinBasePresenter<JoinDependency> {
@@ -17,8 +17,12 @@ final class JoinPresenter: JoinBasePresenter<JoinDependency> {
     
     override func on(event: JoinPresenterOperation) {
         switch event {
-        case .onTapSubmit:
-            print("onTapSubmit")
+        case let .onTapSubmit(id):
+            print("\(id) is passed")
+            let viewController = DetailRouter.assemble()
+            if let view = view as? JoinViewController {
+                view.navigationController?.pushViewController(viewController, animated: true)
+            }
         }
     }
 }

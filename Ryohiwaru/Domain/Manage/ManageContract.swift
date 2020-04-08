@@ -22,4 +22,6 @@ struct ManageViewModel {
     
 }
 
-enum ManagePresenterOperation { }
+enum ManagePresenterOperation {
+    case onTapCell(index: Int)
+}
