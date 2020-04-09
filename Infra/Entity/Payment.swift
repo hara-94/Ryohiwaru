@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import Util
 
 public final class Payment {
     public let category: String
-    public let money: Int
+    public let money: String
     public let name: String
     
-    init(category: String, money: Int, name: String) {
+    init(category: String, money: String, name: String) {
         self.category = category
         self.money = money
         self.name = name
     }
     
     public static func sample() -> Payment {
-        return Payment(category: .paymentsStringSample, money: Int.random(in: 1...10000), name: "name")
+        return Payment(category: .paymentsStringSample, money: Int.random(in: 1...10000).makeStringWithComma(), name: "name")
     }
 }
