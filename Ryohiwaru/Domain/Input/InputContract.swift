@@ -28,6 +28,6 @@ struct InputViewModel {
 }
 
 enum InputPresenterOperation {
-    case onTapCell
+    case onTapCell(item: InputViewModel.Item)
     case onTapFloatButton
 }

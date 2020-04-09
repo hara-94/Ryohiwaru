@@ -13,9 +13,16 @@ final class InputPresenter: InputBasePresenter<InputDependency> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func on(event: InputPresenterOperation) {
-        
+        switch event {
+        case let .onTapCell(item):
+            print("\(item.category), \(item.money), \(item.name)")
+        case .onTapFloatButton:
+            print("onTapFloatButton")
+        }
     }
 }
