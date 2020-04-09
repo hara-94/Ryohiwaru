@@ -18,9 +18,9 @@ public struct InputDemoInteractor: InputUseCase {
     public init() { }
     
     public func getPayments() -> [Payment] {
-        let range = Int.random(in: 0...15)
+        let range = Int.random(in: 1...15)
         var subject: [Payment] = []
-        for _ in 1...range {
+        for _ in 0...range {
             let payment = Payment.sample()
             subject.append(payment)
         }
