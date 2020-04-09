@@ -52,11 +52,18 @@ extension InputViewController: UITableViewDelegate {
 
 extension InputViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let viewModel = self.viewModel else {
+            fatalError("viewModel is not defined successfully")
+        }
+        return viewModel.payments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = self.viewModel else {
+            fatalError("viewModel is not defined successfully")
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "InputCardCell", for: indexPath) as! InputCardCell
+        cell.setText(payment: viewModel.payments[indexPath.row])
         return cell
     }
 }

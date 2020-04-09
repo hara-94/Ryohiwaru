@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Infra
 
 class InputCardCell: UITableViewCell {
 
@@ -49,26 +50,29 @@ class InputCardCell: UITableViewCell {
             backView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
         
-        categoryLabel.text = "Category"
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             categoryLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 10),
             categoryLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 10),
         ])
         
-        moneyLabel.text = "Money"
         moneyLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             moneyLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 10),
             moneyLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -10),
         ])
         
-        nameLabel.text = "Name"
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: categoryLabel.topAnchor, constant: 35),
             nameLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -10),
             nameLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 10),
         ])
+    }
+    
+    func setText(payment: Payment) {
+        categoryLabel.text = payment.category
+        moneyLabel.text = "\(payment.money)円"
+        nameLabel.text = payment.name
     }
 }

@@ -15,13 +15,19 @@ final class InputPresenter: InputBasePresenter<InputDependency> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let payments = inputInteractor.getPayments()
+        let viewModel = InputViewModel(payments: payments)
+        update(viewModel: viewModel)
+    }
+    
+    override func resolveInputInteractor() -> InputDemoInteractor {
+        return InputDemoInteractor()
     }
     
     override func on(event: InputPresenterOperation) {
         switch event {
-        case let .onTapCell(item):
-            print("\(item.category), \(item.money), \(item.name)")
+        case let .onTapCell(payment):
+            print("\(payment.category), \(payment.money), \(payment.name)")
         case .onTapFloatButton:
             print("onTapFloatButton")
         }

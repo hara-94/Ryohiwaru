@@ -8,26 +8,26 @@
 
 import Foundation
 import Wireframe
+import Infra
+
+struct InputInteractorDependency: InputBaseInteractorDependency {
+    typealias Input = InputDemoInteractor
+}
 
 struct InputDependency: InputBaseDependency {
     typealias View = InputViewController
     typealias Presenter = InputPresenter
+    typealias IntereactorDependency = InputInteractorDependency
     typealias ViewModel = InputViewModel
     typealias PresenterOperation = InputPresenterOperation
 }
 
 struct InputViewModel {
     
-    let items: [Item]
-    
-    struct Item {
-        let category: String
-        let money: Int
-        let name: String
-    }
+    let payments: [Payment]
 }
 
 enum InputPresenterOperation {
-    case onTapCell(item: InputViewModel.Item)
+    case onTapCell(payment: Payment)
     case onTapFloatButton
 }
