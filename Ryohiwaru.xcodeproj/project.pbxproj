@@ -24,6 +24,8 @@
 		322F9D62243EE0FA007B87EA /* InputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D61243EE0FA007B87EA /* InputPresenter.swift */; };
 		322F9D64243EE106007B87EA /* InputRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D63243EE106007B87EA /* InputRouter.swift */; };
 		322F9D66243EE116007B87EA /* InputContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D65243EE116007B87EA /* InputContract.swift */; };
+		322F9D69243F27A6007B87EA /* InputCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D68243F27A6007B87EA /* InputCardCell.swift */; };
+		322F9D6B243F4AF4007B87EA /* InputFloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D6A243F4AF4007B87EA /* InputFloatButton.swift */; };
 		32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32414A32243819AC00C74F66 /* PresenterEventReactable.swift */; };
 		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
 		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -185,6 +187,8 @@
 		322F9D61243EE0FA007B87EA /* InputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPresenter.swift; sourceTree = "<group>"; };
 		322F9D63243EE106007B87EA /* InputRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRouter.swift; sourceTree = "<group>"; };
 		322F9D65243EE116007B87EA /* InputContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContract.swift; sourceTree = "<group>"; };
+		322F9D68243F27A6007B87EA /* InputCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCardCell.swift; sourceTree = "<group>"; };
+		322F9D6A243F4AF4007B87EA /* InputFloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFloatButton.swift; sourceTree = "<group>"; };
 		32414A32243819AC00C74F66 /* PresenterEventReactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEventReactable.swift; sourceTree = "<group>"; };
 		3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRepresentable.swift; sourceTree = "<group>"; };
 		3279F99224340B89004C2571 /* Ryohiwaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryohiwaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,12 +346,22 @@
 		322F9D5E243EE0DC007B87EA /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				322F9D67243F2774007B87EA /* Component */,
 				322F9D5F243EE0F0007B87EA /* InputViewController.swift */,
 				322F9D61243EE0FA007B87EA /* InputPresenter.swift */,
 				322F9D63243EE106007B87EA /* InputRouter.swift */,
 				322F9D65243EE116007B87EA /* InputContract.swift */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		322F9D67243F2774007B87EA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				322F9D68243F27A6007B87EA /* InputCardCell.swift */,
+				322F9D6A243F4AF4007B87EA /* InputFloatButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		3267A7D4243423390008B4D9 /* Frameworks */ = {
@@ -899,6 +913,7 @@
 			files = (
 				3279F9AE24340D15004C2571 /* TopPresenter.swift in Sources */,
 				32977DA2243C05010082C91B /* ManagePresenter.swift in Sources */,
+				322F9D6B243F4AF4007B87EA /* InputFloatButton.swift in Sources */,
 				3224855C24377CB700900746 /* StartViewController.swift in Sources */,
 				322F9D60243EE0F0007B87EA /* InputViewController.swift in Sources */,
 				32977DCD243C66F90082C91B /* DetailContract.swift in Sources */,
@@ -921,6 +936,7 @@
 				32977DC7243C66DD0082C91B /* DetailViewController.swift in Sources */,
 				32FC9F24243AA4AC0046EC54 /* StartDateCell.swift in Sources */,
 				32977DB7243C36160082C91B /* JoinPresenter.swift in Sources */,
+				322F9D69243F27A6007B87EA /* InputCardCell.swift in Sources */,
 				3279F9B224340D2E004C2571 /* TopContract.swift in Sources */,
 				32977DA4243C05080082C91B /* ManageRouter.swift in Sources */,
 				3295FE0C24394037002FC5F6 /* StartInputCell.swift in Sources */,

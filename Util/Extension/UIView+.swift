@@ -11,7 +11,6 @@ import UIKit
 public extension UIView {
     func makeEdgeCircle(radius: CGFloat) {
         self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
     }
     func drawBorder(color: UIColor, width: CGFloat) {
         self.layer.borderColor = color.cgColor
