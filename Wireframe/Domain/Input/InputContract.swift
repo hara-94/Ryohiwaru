@@ -8,9 +8,16 @@
 
 import Foundation
 import Base
+import Infra
+
+
+public protocol InputBaseInteractorDependency {
+    associatedtype Input: InputUseCase
+}
 
 public protocol InputBaseDependency: AnyDependency where View: InputViewContract {
     associatedtype Presenter: inputPresenterContract
+    associatedtype IntereactorDependency: InputBaseInteractorDependency
     associatedtype ViewModel
     associatedtype PresenterOperation
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Wireframe
+import Infra
 
 final class InputPresenter: InputBasePresenter<InputDependency> {
     
