@@ -18,8 +18,16 @@ struct InputDependency: InputBaseDependency {
 
 struct InputViewModel {
     
+    let items: [Item]
+    
+    struct Item {
+        let category: String
+        let money: Int
+        let name: String
+    }
 }
 
 enum InputPresenterOperation {
-    
+    case onTapCell
+    case onTapFloatButton
 }

@@ -67,6 +67,7 @@ private extension InputViewController {
         floatButton.setTitle("＋", for: .normal)
         floatButton.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         floatButton.backgroundColor = Color.Background.buttonStart
+        floatButton.addTarget(self, action: #selector(floatButtonOnPressed(_:)), for: .touchUpInside)
         floatButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             floatButton.widthAnchor.constraint(equalToConstant: 50),
@@ -74,5 +75,9 @@ private extension InputViewController {
             floatButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
             floatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
         ])
+    }
+    
+    @objc func floatButtonOnPressed(_ sender: Any?) {
+        
     }
 }
