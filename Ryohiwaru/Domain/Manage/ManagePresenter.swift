@@ -20,7 +20,9 @@ final class ManagePresenter: ManageBasePresenter<ManageDepedency> {
         case let .onTapCell(index):
             print("\(index) is passed")
             let viewController = DetailRouter.assemble()
-            viewController.setViewControllers([], animated: true)
+            let inputViewController = InputRouter.assemble()
+            inputViewController.tabBarItem = UITabBarItem(title: "入力", image: UIImage(named: "input"), tag: 1)
+            viewController.setViewControllers([inputViewController], animated: true)
             if let view = view as? ManageViewController {
                 view.navigationController?.pushViewController(viewController, animated: true)
             }

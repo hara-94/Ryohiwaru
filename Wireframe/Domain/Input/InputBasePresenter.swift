@@ -7,3 +7,29 @@
 //
 
 import Foundation
+import Base
+
+open class InputBasePresenter<Dependency: InputBaseDependency>: BasePresenter, inputPresenterContract, PresenterEventReactable {
+    public weak var view: InputViewInterface!
+    public var router: InputRouterInterface!
+    
+    public private(set) lazy var inputInteractor: Dependency.IntereactorDependency.Input = {
+        return resolveInputInteractor()
+    }()
+    
+    public required override init() {
+        super.init()
+    }
+    
+    public func update(viewModel: Dependency.ViewModel) {
+        if let view = view as? AnyViewRepresentable {
+            view.update(anyViewModel: viewModel)
+        }
+    }
+    
+    open func resolveInputInteractor() -> Dependency.IntereactorDependency.Input {
+        fatalError("Must override resolveInputInteractor")
+    }
+    
+    open func on(event: Dependency.PresenterOperation) { }
+}
