@@ -20,6 +20,10 @@
 		3224855E24377CC000900746 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855D24377CC000900746 /* StartPresenter.swift */; };
 		3224856024377CC900900746 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224855F24377CC900900746 /* StartRouter.swift */; };
 		3224856224377CDA00900746 /* StartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224856124377CDA00900746 /* StartContract.swift */; };
+		322F9D60243EE0F0007B87EA /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D5F243EE0F0007B87EA /* InputViewController.swift */; };
+		322F9D62243EE0FA007B87EA /* InputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D61243EE0FA007B87EA /* InputPresenter.swift */; };
+		322F9D64243EE106007B87EA /* InputRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D63243EE106007B87EA /* InputRouter.swift */; };
+		322F9D66243EE116007B87EA /* InputContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D65243EE116007B87EA /* InputContract.swift */; };
 		32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32414A32243819AC00C74F66 /* PresenterEventReactable.swift */; };
 		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
 		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -177,6 +181,10 @@
 		3224855D24377CC000900746 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		3224855F24377CC900900746 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
 		3224856124377CDA00900746 /* StartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartContract.swift; sourceTree = "<group>"; };
+		322F9D5F243EE0F0007B87EA /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		322F9D61243EE0FA007B87EA /* InputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPresenter.swift; sourceTree = "<group>"; };
+		322F9D63243EE106007B87EA /* InputRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRouter.swift; sourceTree = "<group>"; };
+		322F9D65243EE116007B87EA /* InputContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContract.swift; sourceTree = "<group>"; };
 		32414A32243819AC00C74F66 /* PresenterEventReactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEventReactable.swift; sourceTree = "<group>"; };
 		3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRepresentable.swift; sourceTree = "<group>"; };
 		3279F99224340B89004C2571 /* Ryohiwaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryohiwaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +339,17 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		322F9D5E243EE0DC007B87EA /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				322F9D5F243EE0F0007B87EA /* InputViewController.swift */,
+				322F9D61243EE0FA007B87EA /* InputPresenter.swift */,
+				322F9D63243EE106007B87EA /* InputRouter.swift */,
+				322F9D65243EE116007B87EA /* InputContract.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 		3267A7D4243423390008B4D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +409,7 @@
 		3279F9A924340CD2004C2571 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				322F9D5E243EE0DC007B87EA /* Input */,
 				32977DC5243C66C20082C91B /* Detail */,
 				32977DB3243C35F70082C91B /* Join */,
 				32977D93243BF9280082C91B /* Manage */,
@@ -880,9 +900,11 @@
 				3279F9AE24340D15004C2571 /* TopPresenter.swift in Sources */,
 				32977DA2243C05010082C91B /* ManagePresenter.swift in Sources */,
 				3224855C24377CB700900746 /* StartViewController.swift in Sources */,
+				322F9D60243EE0F0007B87EA /* InputViewController.swift in Sources */,
 				32977DCD243C66F90082C91B /* DetailContract.swift in Sources */,
 				32977DCB243C66EE0082C91B /* DetailRouter.swift in Sources */,
 				3279F9B024340D22004C2571 /* TopRouter.swift in Sources */,
+				322F9D66243EE116007B87EA /* InputContract.swift in Sources */,
 				3279F9AC24340D0B004C2571 /* TopViewController.swift in Sources */,
 				3279F99624340B89004C2571 /* AppDelegate.swift in Sources */,
 				32977DA6243C05120082C91B /* ManageContract.swift in Sources */,
@@ -895,6 +917,7 @@
 				32977DB9243C361F0082C91B /* JoinRouter.swift in Sources */,
 				32977DBB243C36280082C91B /* JoinContract.swift in Sources */,
 				3295FE1224398D30002FC5F6 /* StartHeaderView.swift in Sources */,
+				322F9D62243EE0FA007B87EA /* InputPresenter.swift in Sources */,
 				32977DC7243C66DD0082C91B /* DetailViewController.swift in Sources */,
 				32FC9F24243AA4AC0046EC54 /* StartDateCell.swift in Sources */,
 				32977DB7243C36160082C91B /* JoinPresenter.swift in Sources */,
@@ -904,6 +927,7 @@
 				32977DA9243C144C0082C91B /* ManageTravelItemCell.swift in Sources */,
 				32977DB5243C360B0082C91B /* JoinViewController.swift in Sources */,
 				3224855E24377CC000900746 /* StartPresenter.swift in Sources */,
+				322F9D64243EE106007B87EA /* InputRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
