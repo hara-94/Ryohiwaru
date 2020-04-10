@@ -35,6 +35,10 @@
 		322F9D94243F5D26007B87EA /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D93243F5D26007B87EA /* Payment.swift */; };
 		322F9D9A243F61FA007B87EA /* String+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D99243F61FA007B87EA /* String+Sample.swift */; };
 		322F9D9C243FE64F007B87EA /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D9B243FE64F007B87EA /* Int+.swift */; };
+		322F9D9F2440B1EB007B87EA /* InputAddBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9D9E2440B1EB007B87EA /* InputAddBasePresenter.swift */; };
+		322F9DA12440B1F9007B87EA /* InputAddBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA02440B1F9007B87EA /* InputAddBaseRouter.swift */; };
+		322F9DA32440B202007B87EA /* InputAddBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA22440B202007B87EA /* InputAddBaseView.swift */; };
+		322F9DA52440B20C007B87EA /* InputAddContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA42440B20C007B87EA /* InputAddContract.swift */; };
 		32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32414A32243819AC00C74F66 /* PresenterEventReactable.swift */; };
 		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
 		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -230,6 +234,10 @@
 		322F9D93243F5D26007B87EA /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		322F9D99243F61FA007B87EA /* String+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Sample.swift"; sourceTree = "<group>"; };
 		322F9D9B243FE64F007B87EA /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		322F9D9E2440B1EB007B87EA /* InputAddBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddBasePresenter.swift; sourceTree = "<group>"; };
+		322F9DA02440B1F9007B87EA /* InputAddBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddBaseRouter.swift; sourceTree = "<group>"; };
+		322F9DA22440B202007B87EA /* InputAddBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddBaseView.swift; sourceTree = "<group>"; };
+		322F9DA42440B20C007B87EA /* InputAddContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddContract.swift; sourceTree = "<group>"; };
 		32414A32243819AC00C74F66 /* PresenterEventReactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEventReactable.swift; sourceTree = "<group>"; };
 		3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRepresentable.swift; sourceTree = "<group>"; };
 		3279F99224340B89004C2571 /* Ryohiwaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryohiwaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,6 +377,7 @@
 		32157997243D71B100683786 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				322F9D9D2440B1B6007B87EA /* Add */,
 				32157998243D71CB00683786 /* InputBasePresenter.swift */,
 				3215799A243D71D600683786 /* InputBaseRouter.swift */,
 				3215799C243D71DF00683786 /* InputBaseView.swift */,
@@ -472,6 +481,17 @@
 				322F9D99243F61FA007B87EA /* String+Sample.swift */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		322F9D9D2440B1B6007B87EA /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				322F9D9E2440B1EB007B87EA /* InputAddBasePresenter.swift */,
+				322F9DA02440B1F9007B87EA /* InputAddBaseRouter.swift */,
+				322F9DA22440B202007B87EA /* InputAddBaseView.swift */,
+				322F9DA42440B20C007B87EA /* InputAddContract.swift */,
+			);
+			path = Add;
 			sourceTree = "<group>";
 		};
 		3267A7D4243423390008B4D9 /* Frameworks */ = {
@@ -1169,17 +1189,21 @@
 				32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */,
 				32977DC4243C60F40082C91B /* DetailContract.swift in Sources */,
 				32157999243D71CB00683786 /* InputBasePresenter.swift in Sources */,
+				322F9DA12440B1F9007B87EA /* InputAddBaseRouter.swift in Sources */,
 				3267A7E324342CA20008B4D9 /* ViewModelRepresentable.swift in Sources */,
 				32977DAC243C2B670082C91B /* JoinBasePreesnter.swift in Sources */,
 				32977D98243BF9640082C91B /* ManageBasePresenter.swift in Sources */,
 				3224855724377C8800900746 /* StartBaseView.swift in Sources */,
+				322F9DA32440B202007B87EA /* InputAddBaseView.swift in Sources */,
 				3279F9DF243411C1004C2571 /* TopBasePresenter.swift in Sources */,
 				32977DB2243C2B8C0082C91B /* JoinContract.swift in Sources */,
 				3215799F243D71EA00683786 /* InputContract.swift in Sources */,
+				322F9D9F2440B1EB007B87EA /* InputAddBasePresenter.swift in Sources */,
 				32977DC2243C60E90082C91B /* DetailBaseView.swift in Sources */,
 				32977DC0243C60E00082C91B /* DetailBaseRouter.swift in Sources */,
 				3279F9E5243411F7004C2571 /* TopContract.swift in Sources */,
 				3279F9E1243411CD004C2571 /* TopBaseRouter.swift in Sources */,
+				322F9DA52440B20C007B87EA /* InputAddContract.swift in Sources */,
 				32977D9E243BF9840082C91B /* ManageContract.swift in Sources */,
 				32977DB0243C2B7F0082C91B /* JoinBaseView.swift in Sources */,
 				32977D9C243BF9790082C91B /* ManageBaseView.swift in Sources */,
