@@ -90,6 +90,7 @@ private extension JoinViewController {
             return
         }
         if id != "" {
+            textField.text = ""
             kick(event: .onTapSubmit(id: id))
         }
     }
