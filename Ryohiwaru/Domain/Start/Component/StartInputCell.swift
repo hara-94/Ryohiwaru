@@ -28,9 +28,11 @@ final class StartInputCell: UITableViewCell {
         contentView.addSubview(textField)
         
         textField.translatesAutoresizingMaskIntoConstraints = false
+        let btmAnchor = textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+        btmAnchor.priority = .defaultLow
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            btmAnchor,
             textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
         ])

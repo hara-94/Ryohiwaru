@@ -37,10 +37,12 @@ class StartDateCell: UITableViewCell {
         stackView.spacing = 12
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
+        let btmAnchor = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+        btmAnchor.priority = .defaultLow
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            btmAnchor,
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
         ])
