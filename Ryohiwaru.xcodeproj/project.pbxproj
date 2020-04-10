@@ -39,6 +39,10 @@
 		322F9DA12440B1F9007B87EA /* InputAddBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA02440B1F9007B87EA /* InputAddBaseRouter.swift */; };
 		322F9DA32440B202007B87EA /* InputAddBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA22440B202007B87EA /* InputAddBaseView.swift */; };
 		322F9DA52440B20C007B87EA /* InputAddContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA42440B20C007B87EA /* InputAddContract.swift */; };
+		322F9DA824413D4E007B87EA /* InputAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA724413D4E007B87EA /* InputAddViewController.swift */; };
+		322F9DAA24413D5A007B87EA /* InputAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA924413D59007B87EA /* InputAddPresenter.swift */; };
+		322F9DAC24413D62007B87EA /* InputAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DAB24413D62007B87EA /* InputAddRouter.swift */; };
+		322F9DAE24413D6C007B87EA /* InputAddContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DAD24413D6C007B87EA /* InputAddContract.swift */; };
 		32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32414A32243819AC00C74F66 /* PresenterEventReactable.swift */; };
 		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
 		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -238,6 +242,10 @@
 		322F9DA02440B1F9007B87EA /* InputAddBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddBaseRouter.swift; sourceTree = "<group>"; };
 		322F9DA22440B202007B87EA /* InputAddBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddBaseView.swift; sourceTree = "<group>"; };
 		322F9DA42440B20C007B87EA /* InputAddContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddContract.swift; sourceTree = "<group>"; };
+		322F9DA724413D4E007B87EA /* InputAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddViewController.swift; sourceTree = "<group>"; };
+		322F9DA924413D59007B87EA /* InputAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddPresenter.swift; sourceTree = "<group>"; };
+		322F9DAB24413D62007B87EA /* InputAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddRouter.swift; sourceTree = "<group>"; };
+		322F9DAD24413D6C007B87EA /* InputAddContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddContract.swift; sourceTree = "<group>"; };
 		32414A32243819AC00C74F66 /* PresenterEventReactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEventReactable.swift; sourceTree = "<group>"; };
 		3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRepresentable.swift; sourceTree = "<group>"; };
 		3279F99224340B89004C2571 /* Ryohiwaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryohiwaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -412,6 +420,7 @@
 		322F9D5E243EE0DC007B87EA /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				322F9DA624413D37007B87EA /* Add */,
 				322F9D67243F2774007B87EA /* Component */,
 				322F9D5F243EE0F0007B87EA /* InputViewController.swift */,
 				322F9D61243EE0FA007B87EA /* InputPresenter.swift */,
@@ -490,6 +499,17 @@
 				322F9DA02440B1F9007B87EA /* InputAddBaseRouter.swift */,
 				322F9DA22440B202007B87EA /* InputAddBaseView.swift */,
 				322F9DA42440B20C007B87EA /* InputAddContract.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		322F9DA624413D37007B87EA /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				322F9DA724413D4E007B87EA /* InputAddViewController.swift */,
+				322F9DA924413D59007B87EA /* InputAddPresenter.swift */,
+				322F9DAB24413D62007B87EA /* InputAddRouter.swift */,
+				322F9DAD24413D6C007B87EA /* InputAddContract.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1134,6 +1154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322F9DAA24413D5A007B87EA /* InputAddPresenter.swift in Sources */,
 				3279F9AE24340D15004C2571 /* TopPresenter.swift in Sources */,
 				32977DA2243C05010082C91B /* ManagePresenter.swift in Sources */,
 				322F9D6B243F4AF4007B87EA /* InputFloatButton.swift in Sources */,
@@ -1147,12 +1168,14 @@
 				3279F99624340B89004C2571 /* AppDelegate.swift in Sources */,
 				32977DA6243C05120082C91B /* ManageContract.swift in Sources */,
 				3224856224377CDA00900746 /* StartContract.swift in Sources */,
+				322F9DA824413D4E007B87EA /* InputAddViewController.swift in Sources */,
 				32977DC9243C66E60082C91B /* DetailPresenter.swift in Sources */,
 				3224856024377CC900900746 /* StartRouter.swift in Sources */,
 				3279F9B524340E4B004C2571 /* AppViewController.swift in Sources */,
 				32977DA0243C04F70082C91B /* ManageViewController.swift in Sources */,
 				3279F99824340B89004C2571 /* SceneDelegate.swift in Sources */,
 				32977DB9243C361F0082C91B /* JoinRouter.swift in Sources */,
+				322F9DAC24413D62007B87EA /* InputAddRouter.swift in Sources */,
 				32977DBB243C36280082C91B /* JoinContract.swift in Sources */,
 				3295FE1224398D30002FC5F6 /* StartHeaderView.swift in Sources */,
 				322F9D62243EE0FA007B87EA /* InputPresenter.swift in Sources */,
@@ -1167,6 +1190,7 @@
 				32977DB5243C360B0082C91B /* JoinViewController.swift in Sources */,
 				3224855E24377CC000900746 /* StartPresenter.swift in Sources */,
 				322F9D64243EE106007B87EA /* InputRouter.swift in Sources */,
+				322F9DAE24413D6C007B87EA /* InputAddContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

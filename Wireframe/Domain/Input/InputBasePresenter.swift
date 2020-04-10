@@ -9,7 +9,7 @@
 import Foundation
 import Base
 
-open class InputBasePresenter<Dependency: InputBaseDependency>: BasePresenter, inputPresenterContract, PresenterEventReactable {
+open class InputBasePresenter<Dependency: InputBaseDependency>: BasePresenter, InputPresenterContract, PresenterEventReactable {
     public weak var view: InputViewInterface!
     public var router: InputRouterInterface!
     

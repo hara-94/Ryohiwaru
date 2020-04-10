@@ -16,7 +16,7 @@ public protocol InputBaseInteractorDependency {
 }
 
 public protocol InputBaseDependency: AnyDependency where View: InputViewContract {
-    associatedtype Presenter: inputPresenterContract
+    associatedtype Presenter: InputPresenterContract
     associatedtype IntereactorDependency: InputBaseInteractorDependency
     associatedtype ViewModel
     associatedtype PresenterOperation
@@ -34,7 +34,7 @@ public protocol InputRouterInterface: AnyRouterInterface { }
 
 public protocol InputPresenterInterface: AnyPresenterInterface { }
 
-public protocol inputPresenterContract: InputPresenterInterface {
+public protocol InputPresenterContract: InputPresenterInterface {
     associatedtype Dependency: InputBaseDependency
     
     var view: InputViewInterface! { get set }
