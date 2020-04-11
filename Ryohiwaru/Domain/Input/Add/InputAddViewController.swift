@@ -6,13 +6,15 @@
 //  Copyright © 2020 原ひかる. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Wireframe
 
 final class InputAddViewController: InputAddBaseView<InputAddDepedency> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func update(viewModel: ViewModel?) {

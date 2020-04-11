@@ -8,6 +8,7 @@
 
 import Foundation
 import Base
+import Resource
 
 open class InputAddBaseView<Dependency: InputAddBaseDependency>: AppViewController, InputAddViewContract, ViewModelRepresentable {
     public typealias ViewModel = Dependency.ViewModel
@@ -45,6 +46,7 @@ open class InputAddBaseView<Dependency: InputAddBaseDependency>: AppViewControll
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = Color.Background.main
         presenter.viewDidLoad()
     }
     
