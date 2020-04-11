@@ -85,6 +85,6 @@ private extension InputViewController {
     }
     
     @objc func floatButtonOnPressed(_ sender: Any?) {
-        
+        kick(event: .onTapFloatButton)
     }
 }

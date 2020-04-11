@@ -29,7 +29,11 @@ final class InputPresenter: InputBasePresenter<InputDependency> {
         case let .onTapCell(payment):
             print("\(payment.category), \(payment.money), \(payment.name)")
         case .onTapFloatButton:
-            print("onTapFloatButton")
+            let viewController = InputAddRouter.assemble()
+            if let view = view as? InputViewController {
+                viewController.modalPresentationStyle = .pageSheet
+                view.present(viewController, animated: true, completion: nil)
+            }
         }
     }
 }
