@@ -15,6 +15,7 @@ final class CalendarViewController: CalendarBaseView<CalendarDependency> {
         let layout: UICollectionViewFlowLayout = .init()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         collectionView.backgroundColor = Color.Background.main
         collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: "CalendarCell")
@@ -36,12 +37,16 @@ extension CalendarViewController: UICollectionViewDelegate {
 
 extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 31
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
-        cell.backgroundColor = .blue
+        if indexPath.item % 2 == 0 {
+            cell.backgroundColor = .blue
+        } else {
+            cell.backgroundColor = .yellow
+        }
         return cell
     }
 }
@@ -52,7 +57,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size, height: size)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        <#code#>
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
 }
