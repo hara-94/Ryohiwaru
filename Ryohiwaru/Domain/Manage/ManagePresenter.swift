@@ -22,7 +22,9 @@ final class ManagePresenter: ManageBasePresenter<ManageDepedency> {
             let viewController = DetailRouter.assemble()
             let inputViewController = InputRouter.assemble()
             inputViewController.tabBarItem = UITabBarItem(title: "入力", image: UIImage(named: "input"), tag: 1)
-            viewController.setViewControllers([inputViewController], animated: true)
+            let calendarViewController = CalendarRouter.assemble()
+            calendarViewController.tabBarItem = UITabBarItem(title: "カレンダー", image: UIImage(named: "calendar"), tag: 2)
+            viewController.setViewControllers([inputViewController, calendarViewController], animated: true)
             if let view = view as? ManageViewController {
                 view.navigationController?.pushViewController(viewController, animated: true)
             }

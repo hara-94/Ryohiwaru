@@ -10,5 +10,7 @@ import Foundation
 import Wireframe
 
 final class CalendarRouter: CalendarBaseRouter<CalendarDependency> {
-    
+    override class func resolvePresenter() -> Presenter {
+        return Presenter()
+    }
 }

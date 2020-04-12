@@ -10,5 +10,5 @@ import Foundation
 import Wireframe
 
 final class CalendarPresenter: CalendarBasePresenter<CalendarDependency> {
-    
+     
 }
