@@ -13,6 +13,7 @@ final class InputAddPresenter: InputAddBasePresenter<InputAddDepedency> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func on(event: InputAddPresenterOperation) {

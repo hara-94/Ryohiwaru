@@ -43,6 +43,7 @@
 		322F9DAA24413D5A007B87EA /* InputAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DA924413D59007B87EA /* InputAddPresenter.swift */; };
 		322F9DAC24413D62007B87EA /* InputAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DAB24413D62007B87EA /* InputAddRouter.swift */; };
 		322F9DAE24413D6C007B87EA /* InputAddContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DAD24413D6C007B87EA /* InputAddContract.swift */; };
+		322F9DB324414EB1007B87EA /* InputMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F9DB224414EB1007B87EA /* InputMoneyView.swift */; };
 		32414A33243819AC00C74F66 /* PresenterEventReactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32414A32243819AC00C74F66 /* PresenterEventReactable.swift */; };
 		3267A7DA2434233F0008B4D9 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; };
 		3267A7DB2434233F0008B4D9 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3279F9BB24340F33004C2571 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -246,6 +247,7 @@
 		322F9DA924413D59007B87EA /* InputAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddPresenter.swift; sourceTree = "<group>"; };
 		322F9DAB24413D62007B87EA /* InputAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddRouter.swift; sourceTree = "<group>"; };
 		322F9DAD24413D6C007B87EA /* InputAddContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddContract.swift; sourceTree = "<group>"; };
+		322F9DB224414EB1007B87EA /* InputMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMoneyView.swift; sourceTree = "<group>"; };
 		32414A32243819AC00C74F66 /* PresenterEventReactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEventReactable.swift; sourceTree = "<group>"; };
 		3267A7E0243428330008B4D9 /* ViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRepresentable.swift; sourceTree = "<group>"; };
 		3279F99224340B89004C2571 /* Ryohiwaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryohiwaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -435,6 +437,7 @@
 			children = (
 				322F9D68243F27A6007B87EA /* InputCardCell.swift */,
 				322F9D6A243F4AF4007B87EA /* InputFloatButton.swift */,
+				322F9DB224414EB1007B87EA /* InputMoneyView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -506,12 +509,20 @@
 		322F9DA624413D37007B87EA /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				322F9DB6244297E9007B87EA /* Component */,
 				322F9DA724413D4E007B87EA /* InputAddViewController.swift */,
 				322F9DA924413D59007B87EA /* InputAddPresenter.swift */,
 				322F9DAB24413D62007B87EA /* InputAddRouter.swift */,
 				322F9DAD24413D6C007B87EA /* InputAddContract.swift */,
 			);
 			path = Add;
+			sourceTree = "<group>";
+		};
+		322F9DB6244297E9007B87EA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		3267A7D4243423390008B4D9 /* Frameworks */ = {
@@ -1162,6 +1173,7 @@
 				322F9D60243EE0F0007B87EA /* InputViewController.swift in Sources */,
 				32977DCD243C66F90082C91B /* DetailContract.swift in Sources */,
 				32977DCB243C66EE0082C91B /* DetailRouter.swift in Sources */,
+				322F9DB324414EB1007B87EA /* InputMoneyView.swift in Sources */,
 				3279F9B024340D22004C2571 /* TopRouter.swift in Sources */,
 				322F9D66243EE116007B87EA /* InputContract.swift in Sources */,
 				3279F9AC24340D0B004C2571 /* TopViewController.swift in Sources */,
