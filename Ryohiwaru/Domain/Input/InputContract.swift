@@ -23,7 +23,6 @@ struct InputDependency: InputBaseDependency {
 }
 
 struct InputViewModel {
-    
     let payments: [Payment]
 }
 

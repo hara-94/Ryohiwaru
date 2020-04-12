@@ -12,26 +12,17 @@ import Resource
 
 final class InputViewController: InputBaseView<InputDependency> {
     
-    private let tableView: UITableView = .init()
+    private let moneyView: InputMoneyView = .init()
+    private let tableView: UITableView = .init(frame: .zero, style: .grouped)
     private let floatButton: InputFloatButton = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.backgroundColor = Color.Background.buttonEnd
         
-        tableView.backgroundColor = Color.Background.main
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(InputCardCell.self, forCellReuseIdentifier: "InputCardCell")
-        tableView.separatorStyle = .none
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        ])
-        
+        setMoneyView()
+        setTableView()
         setFloatButton()
     }
     
@@ -41,6 +32,12 @@ final class InputViewController: InputBaseView<InputDependency> {
 }
 
 extension InputViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -69,6 +66,35 @@ extension InputViewController: UITableViewDataSource {
 }
 
 private extension InputViewController {
+    func setTableView() {
+        tableView.backgroundColor = Color.Background.main
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(InputCardCell.self, forCellReuseIdentifier: "InputCardCell")
+        tableView.separatorStyle = .none
+        tableView.layer.cornerRadius = 15
+        tableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: moneyView.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+    }
+    
+    func setMoneyView() {
+        view.addSubview(moneyView)
+        moneyView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            moneyView.heightAnchor.constraint(equalToConstant: 230),
+            moneyView.topAnchor.constraint(equalTo: view.topAnchor),
+            moneyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            moneyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+    }
+    
     func setFloatButton() {
         view.addSubview(floatButton)
         floatButton.setTitle("＋", for: .normal)

@@ -22,6 +22,7 @@ final class TopViewController: TopBaseView<TopDependency> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.isTranslucent = false
         self.view.backgroundColor = Color.Background.main
         
         self.view.addSubview(stackView)
