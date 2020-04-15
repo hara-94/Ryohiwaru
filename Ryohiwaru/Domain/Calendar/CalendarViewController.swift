@@ -11,12 +11,17 @@ import Wireframe
 import Resource
 
 final class CalendarViewController: CalendarBaseView<CalendarDependency> {
+    private var cal = Calendar.current
+    private let dateFormatter = DateFormatter()
+    private var components = DateComponents()
+    private let now = Date()
+    private let weekView: CalendarWeekView = .init()
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = .init()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 30, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         collectionView.backgroundColor = Color.Background.main
         collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: "CalendarCell")
         return collectionView
@@ -28,6 +33,14 @@ final class CalendarViewController: CalendarBaseView<CalendarDependency> {
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
+        
+        cal.locale = Locale(identifier: "ja")
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+        components.year = cal.component(.year, from: now)
+        components.month = cal.component(.month, from: now)
+        components.day = 1
+        
+        setWeekView()
     }
 }
 
@@ -37,15 +50,19 @@ extension CalendarViewController: UICollectionViewDelegate {
 
 extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 31
+        return 37
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
-        if indexPath.item % 2 == 0 {
-            cell.backgroundColor = .blue
-        } else {
-            cell.backgroundColor = .yellow
+        let firstDayOfMonth = cal.date(from: components)
+        let firstWeekDay = cal.component(.weekday, from: firstDayOfMonth!)
+        let weekDayAdding = 2 - firstWeekDay
+        let daysCountInMonth = cal.range(of: .day, in: .month, for: firstDayOfMonth!)?.count
+        
+        if indexPath.row + weekDayAdding >= 1 && indexPath.row + weekDayAdding <= daysCountInMonth! {
+            cell.setText(text: "\(indexPath.row + weekDayAdding)")
+            cell.backgroundColor = .white
         }
         return cell
     }
@@ -59,5 +76,17 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+}
+
+private extension CalendarViewController {
+    func setWeekView() {
+        view.addSubview(weekView)
+        weekView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            weekView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            weekView.heightAnchor.constraint(equalToConstant: 30),
+            weekView.topAnchor.constraint(equalTo: view.topAnchor),
+        ])
     }
 }
