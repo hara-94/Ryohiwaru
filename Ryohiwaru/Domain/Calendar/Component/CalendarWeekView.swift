@@ -41,11 +41,6 @@ final class CalendarWeekView: UIView {
                 label.topAnchor.constraint(equalTo: stackView.topAnchor),
                 label.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
             ])
-            if i % 2 == 0 {
-                label.backgroundColor = .yellow
-            } else {
-                label.backgroundColor = .blue
-            }
         }
     }
 }

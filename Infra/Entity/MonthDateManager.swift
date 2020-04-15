@@ -10,14 +10,14 @@ import Foundation
 
 public final class MonthDateManager {
     private var calendar = Calendar.current
-    private (set) var days: [Date] = []
+    private (set) public var days: [Date] = []
     private var firstDate: Date! {
         didSet {
             days = createDaysForMonth()
         }
     }
     
-    var monthString: String {
+    public var monthString: String {
         return firstDate.makeString(format: "yyyy/MM")
     }
     
@@ -36,7 +36,6 @@ public final class MonthDateManager {
         return (0..<numberOfItems).map { i in
             var dateComponents = DateComponents()
             dateComponents.day = i - dayOfTheWeek
-            print(dateComponents)
             return calendar.date(byAdding: dateComponents, to: firstDate)!
         }
     }

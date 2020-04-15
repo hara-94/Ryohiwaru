@@ -30,7 +30,7 @@ final class CalendarCell: UICollectionViewCell {
         ])
     }
     
-    func setText(text: String) {
-        label.text = text
+    func configure(date: Date) {
+        label.text = date.makeString(format: "d")
     }
 }

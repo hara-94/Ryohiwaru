@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Resource
 
 final class CalendarTitleView: UIView {
     private let stackView: UIStackView = .init()
@@ -24,7 +25,6 @@ final class CalendarTitleView: UIView {
     }
     
     private func setLayout() {
-        self.backgroundColor = .green
         self.addSubview(stackView)
         stackView.addArrangedSubview(prevButton)
         stackView.addArrangedSubview(titleLabel)
@@ -40,24 +40,29 @@ final class CalendarTitleView: UIView {
         ])
         
         nextButton.setTitle("Next", for: .normal)
+        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        nextButton.backgroundColor = Color.Background.buttonStart
+        nextButton.makeEdgeCircle(radius: 20)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nextButton.widthAnchor.constraint(equalToConstant: 70),
+            nextButton.widthAnchor.constraint(equalToConstant: 60),
             nextButton.topAnchor.constraint(equalTo: stackView.topAnchor),
             nextButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
             nextButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
         ])
         
         prevButton.setTitle("Prev", for: .normal)
+        prevButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        prevButton.backgroundColor = Color.Background.buttonStart
+        prevButton.makeEdgeCircle(radius: 20)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            prevButton.widthAnchor.constraint(equalToConstant: 70),
+            prevButton.widthAnchor.constraint(equalToConstant: 60),
             prevButton.topAnchor.constraint(equalTo: stackView.topAnchor),
             prevButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
             prevButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
         ])
         
-        titleLabel.text = "Title"
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -66,5 +71,22 @@ final class CalendarTitleView: UIView {
             titleLabel.leadingAnchor.constraint(equalTo: prevButton.trailingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: nextButton.leadingAnchor),
         ])
+    }
+    enum Target {
+        case prev
+        case next
+    }
+    
+    func setFuncButton(button: Target, target: Any, action: Selector, event: UIControl.Event) {
+        switch button {
+        case .prev:
+            prevButton.addTarget(target, action: action, for: event)
+        case .next:
+            nextButton.addTarget(target, action: action, for: event)
+        }
+    }
+    
+    func setTitle(title: String) {
+        titleLabel.text = title
     }
 }
