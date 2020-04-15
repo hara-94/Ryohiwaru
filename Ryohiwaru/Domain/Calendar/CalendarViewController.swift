@@ -9,19 +9,25 @@
 import UIKit
 import Wireframe
 import Resource
+import Infra
 
 final class CalendarViewController: CalendarBaseView<CalendarDependency> {
     private var cal = Calendar.current
     private let dateFormatter = DateFormatter()
     private var components = DateComponents()
     private let now = Date()
+    private let dateManager: MonthDateManager = .init()
+    private let weeks = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     private let weekView: CalendarWeekView = .init()
+    private let titleView: CalendarTitleView = .init()
+    private let nextButton: UIButton = .init()
+    private let prevButton: UIButton = .init()
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = .init()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 30, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 70, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         collectionView.backgroundColor = Color.Background.main
         collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: "CalendarCell")
         return collectionView
@@ -39,7 +45,7 @@ final class CalendarViewController: CalendarBaseView<CalendarDependency> {
         components.year = cal.component(.year, from: now)
         components.month = cal.component(.month, from: now)
         components.day = 1
-        
+        setTitleView()
         setWeekView()
     }
 }
@@ -80,13 +86,24 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
 }
 
 private extension CalendarViewController {
+    func setTitleView() {
+        view.addSubview(titleView)
+        titleView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32),
+            titleView.heightAnchor.constraint(equalToConstant: 40),
+            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleView.topAnchor.constraint(equalTo: view.topAnchor),
+        ])
+    }
+    
     func setWeekView() {
         view.addSubview(weekView)
         weekView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             weekView.widthAnchor.constraint(equalTo: view.widthAnchor),
             weekView.heightAnchor.constraint(equalToConstant: 30),
-            weekView.topAnchor.constraint(equalTo: view.topAnchor),
+            weekView.topAnchor.constraint(equalTo: titleView.bottomAnchor),
         ])
     }
 }

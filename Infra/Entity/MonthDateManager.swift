@@ -21,7 +21,7 @@ public final class MonthDateManager {
         return firstDate.makeString(format: "yyyy/MM")
     }
     
-    init() {
+    public init() {
         var component = calendar.dateComponents([.year, .month], from: Date())
         component.day = 1
         firstDate = calendar.date(from: component)
@@ -41,11 +41,11 @@ public final class MonthDateManager {
         }
     }
     
-    func nextMonth() {
+    public func nextMonth() {
         firstDate = calendar.date(byAdding: .month, value: 1, to: firstDate)
     }
        
-    func prevMonth() {
+    public func prevMonth() {
         firstDate = calendar.date(byAdding: .month, value: -1, to: firstDate)
     }
 }
