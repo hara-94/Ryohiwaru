@@ -23,7 +23,7 @@ final class CalendarViewController: CalendarBaseView<CalendarDependency> {
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 60, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 75, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         collectionView.backgroundColor = Color.Background.main
         collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: "CalendarCell")
         return collectionView
@@ -90,7 +90,7 @@ private extension CalendarViewController {
             titleView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32),
             titleView.heightAnchor.constraint(equalToConstant: 40),
             titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleView.topAnchor.constraint(equalTo: view.topAnchor),
+            titleView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
         ])
     }
     
@@ -100,7 +100,7 @@ private extension CalendarViewController {
         NSLayoutConstraint.activate([
             weekView.widthAnchor.constraint(equalTo: view.widthAnchor),
             weekView.heightAnchor.constraint(equalToConstant: 20),
-            weekView.topAnchor.constraint(equalTo: titleView.bottomAnchor),
+            weekView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 5),
         ])
     }
     
