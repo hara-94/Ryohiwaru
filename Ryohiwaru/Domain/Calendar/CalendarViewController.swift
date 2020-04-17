@@ -40,9 +40,7 @@ final class CalendarViewController: CalendarBaseView<CalendarDependency> {
     }
 }
 
-extension CalendarViewController: UICollectionViewDelegate {
-    
-}
+extension CalendarViewController: UICollectionViewDelegate { }
 
 extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
