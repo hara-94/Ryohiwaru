@@ -69,7 +69,6 @@ extension InputAddViewController: UICollectionViewDataSource {
             fatalError("ViewModel is not defined successfully")
         }
         cell.configure(item: viewModel.categories[indexPath.item])
-        print(selectedIdx)
         if indexPath.row == selectedIdx {
             cell.selected()
         } else {
