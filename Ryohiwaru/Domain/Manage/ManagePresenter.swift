@@ -18,7 +18,6 @@ final class ManagePresenter: ManageBasePresenter<ManageDepedency> {
     override func on(event: ManagePresenterOperation) {
         switch event {
         case let .onTapCell(index):
-            print("\(index) is passed")
             let viewController = DetailRouter.assemble()
             let inputViewController = InputRouter.assemble()
             inputViewController.tabBarItem = UITabBarItem(title: "入力", image: UIImage(named: "input"), tag: 1)

@@ -46,7 +46,7 @@ open class InputAddBaseView<Dependency: InputAddBaseDependency>: AppViewControll
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Color.Background.main
+        view.backgroundColor = .white
         presenter.viewDidLoad()
     }
     
