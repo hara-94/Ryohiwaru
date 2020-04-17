@@ -22,6 +22,7 @@ struct InputAddViewModel {
     struct CategoryItem {
         let icon: UIImage
         let title: String
+        var isSelected: Bool
     }
 }
 

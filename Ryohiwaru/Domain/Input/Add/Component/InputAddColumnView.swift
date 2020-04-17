@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Resource
 
 final class InputAddColumnView: UIView {
     private let titleLabel: UILabel = .init()
@@ -17,12 +18,15 @@ final class InputAddColumnView: UIView {
     private let prevButton: UIButton = .init()
     private let stackView: UIStackView = .init()
     var type: InputType = .date
+    var title: String = ""
     
     enum InputType {
         case date
         case memo
         case input
     }
+    
+    enum Button { case prev, next }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,17 +37,17 @@ final class InputAddColumnView: UIView {
         fatalError()
     }
     
-    init(type: InputType) {
+    init(type: InputType, title: String) {
         super.init(frame: .zero)
         self.type = type
+        self.title = title
         setLayout()
     }
     
     private func setLayout() {
         self.addSubview(titleLabel)
         
-        titleLabel.text = "Title"
-        titleLabel.backgroundColor = .yellow
+        titleLabel.text = title
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -78,7 +82,7 @@ final class InputAddColumnView: UIView {
         ])
         
         prevButton.setTitle("<", for: .normal)
-        prevButton.backgroundColor = .red
+        prevButton.setTitleColor(Color.Background.buttonStart, for: .normal)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             prevButton.widthAnchor.constraint(equalToConstant: 40),
@@ -87,7 +91,7 @@ final class InputAddColumnView: UIView {
         ])
         
         nextButton.setTitle(">", for: .normal)
-        nextButton.backgroundColor = .blue
+        nextButton.setTitleColor(Color.Background.buttonStart, for: .normal)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             nextButton.widthAnchor.constraint(equalToConstant: 40),
@@ -95,7 +99,11 @@ final class InputAddColumnView: UIView {
             nextButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
         ])
         
+        setDateInTextField(date: Date())
+        textField.textAlignment = .center
+        textField.isEnabled = false
         textField.borderStyle = .roundedRect
+        textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: stackView.topAnchor),
@@ -138,10 +146,22 @@ final class InputAddColumnView: UIView {
         ])
         
         yenLabel.text = "円"
-        
         yenLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             yenLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
         ])
+    }
+    
+    func setButtonFunc(for button: Button, target: Any, action: Selector, event: UIControl.Event) {
+        switch button {
+        case .prev:
+            prevButton.addTarget(target, action: action, for: event)
+        case .next:
+            nextButton.addTarget(target, action: action, for: event)
+        }
+    }
+    
+    func setDateInTextField(date: Date) {
+        textField.text = date.makeString(format: "yyyy年M月dd日")
     }
 }

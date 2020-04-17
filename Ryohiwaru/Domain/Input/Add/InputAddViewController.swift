@@ -11,9 +11,11 @@ import Wireframe
 import Resource
 
 final class InputAddViewController: InputAddBaseView<InputAddDepedency> {
-    private let dateView: InputAddColumnView = .init(type: .date)
-    private let memoView: InputAddColumnView = .init(type: .memo)
-    private let paymentView: InputAddColumnView = .init(type: .input)
+    private let dateView: InputAddColumnView = .init(type: .date, title: "日付")
+    private let memoView: InputAddColumnView = .init(type: .memo, title: "メモ")
+    private let paymentView: InputAddColumnView = .init(type: .input, title: "金額")
+    private var date: Date = .init()
+    private var selectedIdx: Int = 0
     private let registerButton: UIButton = .init()
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = .init()
@@ -41,7 +43,15 @@ final class InputAddViewController: InputAddBaseView<InputAddDepedency> {
     }
 }
 
-extension InputAddViewController: UICollectionViewDelegate {}
+extension InputAddViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = self.viewModel else { fatalError("ViewModel is not defined successfully") }
+        if !viewModel.categories[indexPath.row].isSelected {
+            selectedIdx = indexPath.row
+            collectionView.reloadData()
+        }
+    }
+}
 
 extension InputAddViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,6 +69,12 @@ extension InputAddViewController: UICollectionViewDataSource {
             fatalError("ViewModel is not defined successfully")
         }
         cell.configure(item: viewModel.categories[indexPath.item])
+        print(selectedIdx)
+        if indexPath.row == selectedIdx {
+            cell.selected()
+        } else {
+            cell.unselected()
+        }
         return cell
     }
 }
@@ -76,6 +92,8 @@ private extension InputAddViewController {
         view.addSubview(memoView)
         view.addSubview(paymentView)
         
+        dateView.setButtonFunc(for: .prev, target: self, action: #selector(toPrevDay(_:)), event: .touchUpInside)
+        dateView.setButtonFunc(for: .next, target: self, action: #selector(toNextDay(_:)), event: .touchUpInside)
         dateView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             dateView.heightAnchor.constraint(equalToConstant: 40),
@@ -124,5 +142,17 @@ private extension InputAddViewController {
             collectionView.topAnchor.constraint(equalTo: paymentView.bottomAnchor, constant: 20),
             collectionView.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -20),
         ])
+    }
+    
+    @objc func toPrevDay(_ sender: Any?) {
+        let cal = Calendar.current
+        date = cal.date(byAdding: .day, value: -1, to: date)!
+        dateView.setDateInTextField(date: date)
+    }
+    
+    @objc func toNextDay(_ sender: Any?) {
+        let cal = Calendar.current
+        date = cal.date(byAdding: .day, value: 1, to: date)!
+        dateView.setDateInTextField(date: date)
     }
 }

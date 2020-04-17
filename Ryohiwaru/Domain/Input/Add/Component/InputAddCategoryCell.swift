@@ -36,6 +36,7 @@ final class InputAddCategoryCell: UICollectionViewCell {
             iconView.centerXAnchor.constraint(lessThanOrEqualTo: contentView.centerXAnchor),
         ])
         
+        titleLabel.font = UIFont.systemFont(ofSize: 13)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: iconView.bottomAnchor, constant: 8),
@@ -47,5 +48,15 @@ final class InputAddCategoryCell: UICollectionViewCell {
     func configure(item: InputAddViewModel.CategoryItem) {
         iconView.image = item.icon
         titleLabel.text = item.title
+    }
+    
+    func selected() {
+        iconView.tintColor = Color.Background.buttonStart
+        contentView.layer.borderColor = Color.Background.buttonStart.cgColor
+    }
+    
+    func unselected() {
+        iconView.tintColor = Color.Selected.unselected
+        contentView.layer.borderColor = Color.Background.main.cgColor
     }
 }
