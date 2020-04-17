@@ -81,6 +81,7 @@
 		3279F9E5243411F7004C2571 /* TopContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9E4243411F7004C2571 /* TopContract.swift */; };
 		3279F9E9243415B0004C2571 /* AnyContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F9E8243415B0004C2571 /* AnyContract.swift */; };
 		328F628C24484D2B00BA158E /* InputAddColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F628B24484D2B00BA158E /* InputAddColumnView.swift */; };
+		328F628E24493F0C00BA158E /* InputAddCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F628D24493F0C00BA158E /* InputAddCategoryCell.swift */; };
 		3295FE0A24386F37002FC5F6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295FE0924386F37002FC5F6 /* UIView+.swift */; };
 		3295FE0C24394037002FC5F6 /* StartInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295FE0B24394037002FC5F6 /* StartInputCell.swift */; };
 		3295FE1224398D30002FC5F6 /* StartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295FE1124398D30002FC5F6 /* StartHeaderView.swift */; };
@@ -298,6 +299,7 @@
 		3279F9E4243411F7004C2571 /* TopContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContract.swift; sourceTree = "<group>"; };
 		3279F9E8243415B0004C2571 /* AnyContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContract.swift; sourceTree = "<group>"; };
 		328F628B24484D2B00BA158E /* InputAddColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddColumnView.swift; sourceTree = "<group>"; };
+		328F628D24493F0C00BA158E /* InputAddCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddCategoryCell.swift; sourceTree = "<group>"; };
 		3295FE0924386F37002FC5F6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		3295FE0B24394037002FC5F6 /* StartInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInputCell.swift; sourceTree = "<group>"; };
 		3295FE1124398D30002FC5F6 /* StartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartHeaderView.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				328F628B24484D2B00BA158E /* InputAddColumnView.swift */,
+				328F628D24493F0C00BA158E /* InputAddCategoryCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1263,6 +1266,7 @@
 				322F9D62243EE0FA007B87EA /* InputPresenter.swift in Sources */,
 				32977DC7243C66DD0082C91B /* DetailViewController.swift in Sources */,
 				322F9DC424433E20007B87EA /* CalendarPresenter.swift in Sources */,
+				328F628E24493F0C00BA158E /* InputAddCategoryCell.swift in Sources */,
 				322F9DCD2443EBDC007B87EA /* CalendarWeekView.swift in Sources */,
 				32FC9F24243AA4AC0046EC54 /* StartDateCell.swift in Sources */,
 				32977DB7243C36160082C91B /* JoinPresenter.swift in Sources */,

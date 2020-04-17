@@ -18,9 +18,10 @@ final class InputAddViewController: InputAddBaseView<InputAddDepedency> {
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = .init()
         layout.scrollDirection = .vertical
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = .clear
+        collectionView.register(InputAddCategoryCell.self, forCellWithReuseIdentifier: "InputAddCategoryCell")
         return collectionView
     }()
     
@@ -29,6 +30,7 @@ final class InputAddViewController: InputAddBaseView<InputAddDepedency> {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         setColumnView()
         setButton()
         setCollectionView()
@@ -43,12 +45,20 @@ extension InputAddViewController: UICollectionViewDelegate {}
 
 extension InputAddViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        guard let viewModel = self.viewModel else {
+            fatalError("ViewModel is not defined successfully")
+        }
+        return viewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .blue
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InputAddCategoryCell", for: indexPath) as? InputAddCategoryCell else {
+            fatalError("Cell is not defined successfully")
+        }
+        guard let viewModel = self.viewModel else {
+            fatalError("ViewModel is not defined successfully")
+        }
+        cell.configure(item: viewModel.categories[indexPath.item])
         return cell
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 原ひかる. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Wireframe
 
 struct InputAddDepedency: InputAddBaseDependency {
@@ -17,7 +17,12 @@ struct InputAddDepedency: InputAddBaseDependency {
 }
 
 struct InputAddViewModel {
+    let categories: [CategoryItem]
     
+    struct CategoryItem {
+        let icon: UIImage
+        let title: String
+    }
 }
 
 enum InputAddPresenterOperation {
