@@ -50,6 +50,7 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
+        cell.backgroundColor = .white
         let date = dateManager.days[indexPath.row]
         let month = Calendar.current.component(.month, from: date)
         if month == self.month {
