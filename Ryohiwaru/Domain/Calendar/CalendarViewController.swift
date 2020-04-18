@@ -18,6 +18,7 @@ final class CalendarViewController: CalendarBaseView<CalendarDependency> {
     private let titleView: CalendarTitleView = .init()
     private let nextButton: UIButton = .init()
     private let prevButton: UIButton = .init()
+    private var month = Calendar.current.component(.month, from: Date())
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = .init()
         layout.scrollDirection = .vertical
@@ -49,7 +50,14 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
-        cell.configure(date: dateManager.days[indexPath.row])
+        cell.backgroundColor = .white
+        let date = dateManager.days[indexPath.row]
+        let month = Calendar.current.component(.month, from: date)
+        if month == self.month {
+            cell.configure(date: dateManager.days[indexPath.row])
+        }  else {
+            cell.initialize()
+        }
         return cell
     }
 }
@@ -69,12 +77,14 @@ private extension CalendarViewController {
     @objc func toPrevMonth(_ sender: Any?) {
         dateManager.prevMonth()
         titleView.setTitle(title: dateManager.monthString)
+        month = month == 1 ? 12 : month - 1
         collectionView.reloadData()
     }
     
     @objc func toNextMonth(_ sender: Any?) {
         dateManager.nextMonth()
         titleView.setTitle(title: dateManager.monthString)
+        month = month == 12 ? 1 : month + 1
         collectionView.reloadData()
     }
     
