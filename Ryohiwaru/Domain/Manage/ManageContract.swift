@@ -9,6 +9,7 @@
 import Foundation
 import Base
 import Wireframe
+import Infra
 
 struct ManageDepedency: ManageBaseDependency {
     
@@ -19,7 +20,7 @@ struct ManageDepedency: ManageBaseDependency {
 }
 
 struct ManageViewModel {
-    
+    public let travels: [Travel]
 }
 
 enum ManagePresenterOperation {

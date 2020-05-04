@@ -8,11 +8,21 @@
 
 import UIKit
 import Wireframe
+import Infra
 
 final class ManagePresenter: ManageBasePresenter<ManageDepedency> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let viewModel = ManageViewModel(travels: [
+            .init(title: "001", startDate: "00/00", endDate: "00/00", allPayments: 15000),
+            .init(title: "002", startDate: "00/00", endDate: "00/00", allPayments: 15000),
+            .init(title: "003", startDate: "00/00", endDate: "00/00", allPayments: 15000),
+            .init(title: "004", startDate: "00/00", endDate: "00/00", allPayments: 15000),
+            .init(title: "005", startDate: "00/00", endDate: "00/00", allPayments: 15000),
+        ])
+        update(viewModel: viewModel)
     }
     
     override func on(event: ManagePresenterOperation) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Infra
 
 final class ManageTravelItemCell: UITableViewCell {
     
@@ -40,26 +41,29 @@ final class ManageTravelItemCell: UITableViewCell {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
         
-        titleLabel.text = "Title"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: stackView.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
         ])
         
-        dateLabel.text = "Date"
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             dateLabel.topAnchor.constraint(equalTo: stackView.topAnchor),
             dateLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
         ])
         
-        paymentLabel.text = "000円"
         paymentLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             paymentLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
             paymentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             paymentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
+    }
+    
+    func set(travel: Travel) {
+        titleLabel.text = travel.title
+        dateLabel.text = "\(travel.startDate) 〜 \(travel.endDate)"
+        paymentLabel.text = travel.allPayments.makeStringWithComma() + "円"
     }
 }

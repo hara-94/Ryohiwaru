@@ -1,0 +1,6 @@
+framework module Pods_Ryohiwaru {
+  umbrella header "Pods-Ryohiwaru-umbrella.h"
+
+  export *
+  module * { export * }
+}

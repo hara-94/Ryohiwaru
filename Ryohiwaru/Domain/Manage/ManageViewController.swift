@@ -19,18 +19,7 @@ final class ManageViewController: ManageBaseView<ManageDepedency> {
         
         view.backgroundColor = Color.Background.main
         
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(ManageTravelItemCell.self, forCellReuseIdentifier: "ManageTravelItemCell")
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-        ])
+        setTableView()
     }
     
     override func update(viewModel: ManageViewModel?) {
@@ -51,11 +40,31 @@ extension ManageViewController: UITableViewDelegate {
 
 extension ManageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.travels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel else { fatalError("ViewModel is not defined successfully") }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManageTravelItemCell", for: indexPath) as! ManageTravelItemCell
+        cell.set(travel: viewModel.travels[indexPath.row])
         return cell
+    }
+}
+
+private extension ManageViewController {
+    func setTableView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ManageTravelItemCell.self, forCellReuseIdentifier: "ManageTravelItemCell")
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+        ])
     }
 }
